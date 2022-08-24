@@ -42,7 +42,7 @@ public class Transaction {
           return Amount;}
         else{return Amount*-1;}
     }
-    public static String DefinirUsuario(String User){
+    public static String DefineUser(String User){
         return User; 
     }
 }
