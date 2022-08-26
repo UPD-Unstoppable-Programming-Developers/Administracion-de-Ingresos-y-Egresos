@@ -1,3 +1,8 @@
+// Es posible crear una nueva instancia de la clase "Empleado"
+// Es posible leer y modificar el nombre de un empleado
+// Es posible leer y modificar el correo de un empleado
+// Es posible leer y modificar la empresa a la que el empleado pertenece
+// Es posible leer y modificar el rol del empleado (administrador, operativo)
 public class Employee {
     private long id;
     private String email;

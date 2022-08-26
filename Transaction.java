@@ -1,3 +1,8 @@
+// Es posible crear una nueva instancia de la clase "MovimientoDinero"
+// Es posible leer y modificar el monto del movimiento
+// Es posible leer y modificar el concepto del movimiento
+// Es posible crear montos positivos y negativos
+// Es posible definir qué usuario fue encargado de registrar el movimiento
 public class Transaction {
 // Attributes
     private int Amount;

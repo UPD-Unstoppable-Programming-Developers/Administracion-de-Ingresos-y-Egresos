@@ -1,4 +1,9 @@
-Public class Enterprise {
+// Es posible crear una instancia de la clase "Enterprise"
+// Es posible leer y modificar el nombre de la empresa
+// Es posible leer y modificar la dirección de la empresa
+// Es posible leer y modificar el teléfono de la empresa
+// Es posible leer y modificar el NIT de la empresa
+public class Enterprise {
     private long id;
     private String name;
     private String document;
