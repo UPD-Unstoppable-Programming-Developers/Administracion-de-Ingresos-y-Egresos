@@ -5,22 +5,22 @@
 // Es posible definir qué usuario fue encargado de registrar el movimiento
 public class Transaction {
 // Attributes
-    private int Amount;
+    private float Amount;
     private boolean TypeAmount;
     private String Concept;
     private String User;
 // Builder
-    public Transaction(int Amount, boolean TypeAmount, String Concept, String User) {
+    public Transaction(float Amount, boolean TypeAmount, String Concept, String User) {
         this.Amount = Amount;
         this.TypeAmount = TypeAmount;
         this.Concept = Concept;
         this.User = User;
     }
 // Getters y Setters
-    public int getAmount() {
+    public float getAmount() {
         return Amount;
     }
-    public void setAmount(int Amount) {
+    public void setAmount(float Amount) {
         this.Amount = Amount;
     }
     public boolean getTypeAmount() {
@@ -42,7 +42,7 @@ public class Transaction {
         this.User = User;
     }
 // Method
-    public static int TypeAmount(boolean TypeAmount,int Amount){
+    public static int TypeAmount(boolean TypeAmount,float Amount){
         if(TypeAmount==true){
           return Amount;}
         else{return Amount*-1;}
