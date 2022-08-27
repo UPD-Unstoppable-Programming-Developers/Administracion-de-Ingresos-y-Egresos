@@ -4,97 +4,41 @@
 // Es posible leer y modificar el teléfono de la empresa
 // Es posible leer y modificar el NIT de la empresa
 public class Enterprise {
-    private long id;
-    private String name;
-    private String document;
-    private String phone;
-    private String address;
-    private User users;
-    private Transaction[] transaction;
-    private  date createAt;
-    private date updatedAt;
-
-    public Enterprise(long id, String name, String document, String phone, String address, User users, Transaction[] transaction, date createAt, date updatedAt) {
-        this.id = id;
-        this.name = name;
-        this.document = document;
-        this.phone = phone;
-        this.address = address;
-        this.users = users;
-        this.transaction = transaction;
-        this.createAt = createAt;
-        this.updatedAt = updatedAt;
+// Atributes
+    private long IdEnterprise;
+    private String NameEnterprise;
+    private String Phone;
+    private String Address;
+// Builder
+    public Enterprise(long Id, String NameEnterprise, String Phone, String Address) {
+        this.Id = Id;
+        this.NameEnterprise = NameEnterprise;
+        this.Phone = Phone;
+        this.Address = Address;
     }
-
+// Getters and Setters
     public long getId() {
-        return id;
+        return Id;
     }
-
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long Id) {
+        this.Id = Id;
     }
-
-    public String getName() {
-        return name;
+    public String getNameEnterprise() {
+        return NameEnterprise;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setNameEnterprise(String NameEnterprise) {
+        this.NameEnterprise = NameEnterprise;
     }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
-        this.document = document;
-    }
-
     public String getPhone() {
-        return phone;
+        return Phone;
     }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
     }
-
     public String getAddress() {
-        return address;
+        return Address;
     }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public User getUsers() {
-        return users;
-    }
-
-    public void setUsers(User users) {
-        this.users = users;
-    }
-
-    public Transaction[] getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction[] transaction) {
-        this.transaction = transaction;
-    }
-
-    public date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(date createAt) {
-        this.createAt = createAt;
-    }
-
-    public date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 }
