@@ -3,42 +3,41 @@
 // Es posible leer y modificar la dirección de la empresa
 // Es posible leer y modificar el teléfono de la empresa
 // Es posible leer y modificar el NIT de la empresa
+//Modelar una empresa como una clase de Java
+//Es posible crear una instancia de la clase "Empresa"
+//Es posible leer y modificar el nombre de la empresa
+//Es posible leer y modificar la dirección de la empresa
+//Es posible leer y modificar el teléfono de la empresa
+//Es posible leer y modificar el NIT de la empresa
+
 public class Enterprise {
-// Atributes
-    private long IdEnterprise;
-    private String NameEnterprise;
-    private String Phone;
-    private String Address;
-// Builder
-    public Enterprise(long Id, String NameEnterprise, String Phone, String Address) {
-        this.Id = Id;
-        this.NameEnterprise = NameEnterprise;
-        this.Phone = Phone;
-        this.Address = Address;
+    private String name;
+    private String address;
+    private String phone;
+    private String NIT;
+
+    //Constructor
+    public Enterprise(String name, String address, String phone, String NIT) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.NIT = NIT;
     }
-// Getters and Setters
-    public long getId() {
-        return Id;
-    }
-    public void setId(long Id) {
-        this.Id = Id;
-    }
-    public String getNameEnterprise() {
-        return NameEnterprise;
-    }
-    public void setNameEnterprise(String NameEnterprise) {
-        this.NameEnterprise = NameEnterprise;
-    }
-    public String getPhone() {
-        return Phone;
-    }
-    public void setPhone(String Phone) {
-        this.Phone = Phone;
-    }
-    public String getAddress() {
-        return Address;
-    }
-    public void setAddress(String Address) {
-        this.Address = Address;
-    }
+    //Get-Set
+
+    public String getName() {return name;}
+
+    public void setName(String name) {this.name = name;}
+
+    public String getAddress() {return address;}
+
+    public void setAddress(String address) {this.address = address;}
+
+    public String getPhone() {return phone;}
+
+    public void setPhone(String phone) {this.phone = phone;}
+
+    public String getNIT() {return NIT;}
+
+    public void setNIT(String NIT) { this.NIT = NIT;}
 }
