@@ -3,88 +3,43 @@
 // Es posible leer y modificar el correo de un empleado
 // Es posible leer y modificar la empresa a la que el empleado pertenece
 // Es posible leer y modificar el rol del empleado (administrador, operativo)
+
+// Class
 public class Employee {
-    private long id;
-    private String email;
-    private Profile profile;
-    private Enum_RoleName role;
-    private Enterprise enterprise;
-    private Transaction[] transaction;
-    private date updatedAt;
-    private  date createAt;
-
-    public Employee(long id, String email, Profile profile, Enum_RoleName role, Enterprise enterprise, Transaction[] transaction, date updatedAt, date createAt) {
-        this.id = id;
-        this.email = email;
-        this.profile = profile;
-        this.role = role;
-        this.enterprise = enterprise;
-        this.transaction = transaction;
-        this.updatedAt = updatedAt;
-        this.createAt = createAt;
+    private String Email;
+    private String Name;
+    private String Enterprise;
+    private String Role;
+// Builder
+    public Employee(String Email, String Name, String Enterprise, String Role) {
+        this.Email = Email;
+        this.Name = Name;
+        this.Enterprise = Enterprise;
+        this.Role = Role;
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+ // Getters and Setters 
     public String getEmail() {
-        return email;
+        return Email;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
-
-    public Profile getProfile() {
-        return profile;
+    public String getName() {
+        return Name;
     }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
+    public void setName(String Name) {
+        this.Name = Name;
     }
-
-    public Enum_RoleName getRole() {
-        return role;
+    public String getEnterprise() {
+        return Enterprise;
     }
-
-    public void setRole(Enum_RoleName role) {
-        this.role = role;
+    public void setEnterprise(String Enterprise) {
+        this.Enterprise = Enterprise;
     }
-
-    public Enterprise getEnterprise() {
-        return enterprise;
+    public String getRole() {
+        return Role;
     }
-
-    public void setEnterprise(Enterprise enterprise) {
-        this.enterprise = enterprise;
-    }
-
-    public Transaction[] getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction[] transaction) {
-        this.transaction = transaction;
-    }
-
-    public date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(date createAt) {
-        this.createAt = createAt;
-    }
+    public void setRole(String Role) {
+        this.Role = Role;
+    } 
 }
