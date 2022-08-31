@@ -16,7 +16,7 @@ public class Transaction {
         this.Concept = Concept;
         this.User = User;
     }
-// Getters y Setters
+// Getters & Setters
     public float getAmount() {
         return Amount;
     }
@@ -42,10 +42,13 @@ public class Transaction {
         this.User = User;
     }
 // Method
-    public static int TypeAmount(boolean TypeAmount,float Amount){
+    public static float TypeAmount(boolean TypeAmount,float Amount){
         if(TypeAmount==true){
-          return Amount;}
-        else{return Amount*-1;}
+          return Amount;
+        }
+        else {
+            return Amount*-1;
+        }
     }
     public static String DefineUser(String User){
         return User; 

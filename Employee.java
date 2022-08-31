@@ -3,9 +3,8 @@
 // Es posible leer y modificar el correo de un empleado
 // Es posible leer y modificar la empresa a la que el empleado pertenece
 // Es posible leer y modificar el rol del empleado (administrador, operativo)
-
-// Class
 public class Employee {
+// Attributes
     private String Email;
     private String Name;
     private String Enterprise;
@@ -17,7 +16,7 @@ public class Employee {
         this.Enterprise = Enterprise;
         this.Role = Role;
     }
- // Getters and Setters 
+// Getters and Setters 
     public String getEmail() {
         return Email;
     }
