@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="Employee")
@@ -9,9 +10,17 @@ public class Employee {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
     private String Email;
+
     private String Name;
     private String Enterprise;
     private String Role;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Transaction> transactionList;
+
+
+    public Employee() {
+    }
 
     public Employee(String email, String name, String enterprise, String role) {
         Email = email;

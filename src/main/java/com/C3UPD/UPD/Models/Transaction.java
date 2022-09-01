@@ -13,6 +13,17 @@ public class Transaction {
     private String Concept;
     private String User;
 
+    @ManyToOne
+    @JoinColumn(name="employee_id")
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name="enterprise_id")
+    private Enterprise enterprise;
+
+    public Transaction() {
+    }
+
     public Transaction(float amount, boolean typeAmount, String concept, String user) {
         Amount = amount;
         TypeAmount = typeAmount;

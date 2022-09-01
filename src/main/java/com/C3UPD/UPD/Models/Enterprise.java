@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="Enterprise")
@@ -13,8 +14,13 @@ public class Enterprise {
     private String phone;
     private String NIT;
 
+    @OneToMany(mappedBy = "enterprise")
+    private List<Transaction> transactionList;
+
     //Constructor
 
+    public Enterprise() {
+    }
 
     public Enterprise(String name, String address, String phone, String NIT) {
         this.name = name;
