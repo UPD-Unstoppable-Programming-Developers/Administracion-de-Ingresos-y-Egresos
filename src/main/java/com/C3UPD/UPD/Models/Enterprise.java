@@ -1,20 +1,19 @@
-package com.C3UPD.UPD.Modelos;
+package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="Enterprise")
+@Table(name = "Enterprise")
 public class Enterprise {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String address;
     private String phone;
     private String NIT;
 
-    //Constructor
-
+    // Constructor
 
     public Enterprise(String name, String address, String phone, String NIT) {
         this.name = name;

@@ -1,12 +1,12 @@
-package com.C3UPD.UPD.Modelos;
+package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="Transaction")
+@Table(name = "Transaction")
 public class Transaction {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private float Amount;
     private boolean TypeAmount;

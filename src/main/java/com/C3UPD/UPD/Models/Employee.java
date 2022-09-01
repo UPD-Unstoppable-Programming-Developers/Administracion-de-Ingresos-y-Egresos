@@ -1,12 +1,12 @@
-package com.C3UPD.UPD.Modelos;
+package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="Employee")
+@Table(name = "Employee")
 public class Employee {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String Email;
     private String Name;
