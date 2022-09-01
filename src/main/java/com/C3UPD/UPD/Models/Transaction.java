@@ -7,11 +7,23 @@ import javax.persistence.*;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private float Amount;
     private boolean TypeAmount;
     private String Concept;
     private String User;
+
+// Constructor
+    @ManyToOne
+    @JoinColumn(name="employee_id")
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name="enterprise_id")
+    private Enterprise enterprise;
+
+    public Transaction() {
+    }
 
     public Transaction(float amount, boolean typeAmount, String concept, String user) {
         Amount = amount;
@@ -20,11 +32,12 @@ public class Transaction {
         User = user;
     }
 
-    public int getId() {
+// Getters and setters
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

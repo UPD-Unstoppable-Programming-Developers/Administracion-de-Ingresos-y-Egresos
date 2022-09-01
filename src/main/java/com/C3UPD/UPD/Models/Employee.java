@@ -1,17 +1,25 @@
 package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private String Email;
     private String Name;
     private String Enterprise;
     private String Role;
+
+// Constructor
+    @OneToMany(mappedBy = "employee")
+    private List<Transaction> transactionList;
+
+    public Employee() {
+    }
 
     public Employee(String email, String name, String enterprise, String role) {
         Email = email;
@@ -20,11 +28,12 @@ public class Employee {
         Role = role;
     }
 
-    public int getId() {
+// Getters and setters
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
