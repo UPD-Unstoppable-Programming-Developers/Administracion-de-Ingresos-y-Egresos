@@ -1,4 +1,4 @@
-package com.C3UPD.UPD.Modelos;
+package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
 
