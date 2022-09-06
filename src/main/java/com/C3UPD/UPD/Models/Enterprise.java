@@ -14,7 +14,7 @@ public class Enterprise {
     private String phone;
     private String NIT;
 
-// Constructor
+    // Constructor
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
@@ -28,7 +28,7 @@ public class Enterprise {
         this.NIT = NIT;
     }
 
-// Getters and setters
+    // Getters and setters
     public long getId() {
         return id;
     }

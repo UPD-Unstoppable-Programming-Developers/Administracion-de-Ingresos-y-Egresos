@@ -14,7 +14,7 @@ public class Employee {
     private String Enterprise;
     private String Role;
 
-// Constructor
+    // Constructor
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 
@@ -28,7 +28,7 @@ public class Employee {
         Role = role;
     }
 
-// Getters and setters
+    // Getters and setters
     public long getId() {
         return id;
     }

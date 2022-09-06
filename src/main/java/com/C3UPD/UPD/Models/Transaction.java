@@ -13,13 +13,13 @@ public class Transaction {
     private String Concept;
     private String User;
 
-// Constructor
+    // Constructor
     @ManyToOne
-    @JoinColumn(name="employee_id")
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name="enterprise_id")
+    @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
     public Transaction() {
@@ -32,7 +32,7 @@ public class Transaction {
         User = user;
     }
 
-// Getters and setters
+    // Getters and setters
     public long getId() {
         return id;
     }
