@@ -9,9 +9,13 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(name="Email")
     private String Email;
+    @Column(name="Name")
     private String Name;
+    @Column(name="Enterprise")
     private String Enterprise;
+    @Column(name="Role")
     private String Role;
 
     // Constructor
