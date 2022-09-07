@@ -4,10 +4,14 @@ import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.services.EnterpriseService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EnterpriseController {
     EnterpriseService service;
     Enterprise enterprise;
+    //List<Enterprise> enterprises;
+    //enterprises = new List<Enterprise>();
 
     public EnterpriseController() {
         this.service = new EnterpriseService();
@@ -18,15 +22,23 @@ public class EnterpriseController {
         return String.format("hello %s!", name);
     }
     @GetMapping("/enterprise")
-    public Enterprise EnterpriseGet(){
-        return service.getEnterprise();
+    public List<Enterprise> getEnterprises(){
+        return service.getEnterprises();
     }
 
     @PostMapping("/enterprise")
-    public Enterprise EnterprisePost(@RequestBody Enterprise enterprise){
+    public List<Enterprise> enterprisePost(@RequestBody List<Enterprise> enterprises){
         //this.enterprise1 = new Enterprise();
         //'enterprise1.setName("Empresa 123");
         //service.setEnterprise(enterprise1);
-        return enterprise;
+        return enterprises;
     }
+
+    @GetMapping("/enterprise/{id}")
+    public Enterprise enterpriseGetId(@PathVariable("id") String id){
+        return service.getEnterpriseID(Integer.parseInt(id));
+    }
+
+
+
 }
