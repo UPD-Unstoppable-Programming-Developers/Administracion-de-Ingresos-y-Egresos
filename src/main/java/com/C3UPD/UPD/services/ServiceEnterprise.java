@@ -1,12 +1,11 @@
 package com.C3UPD.UPD.services;
 
 import com.C3UPD.UPD.Models.Enterprise;
-import org.springframework.web.bind.annotation.GetMapping;
 
-public class service {
+public class ServiceEnterprise {
     Enterprise enterprise;
 
-    public service() {
+    public ServiceEnterprise() {
         this.enterprise = new Enterprise();
         enterprise.setName("Empresa UPD Reload");
 

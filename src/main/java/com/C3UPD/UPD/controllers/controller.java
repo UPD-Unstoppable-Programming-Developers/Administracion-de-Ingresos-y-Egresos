@@ -1,7 +1,7 @@
 package com.C3UPD.UPD.controllers;
 
 import com.C3UPD.UPD.Models.Enterprise;
-import com.C3UPD.UPD.services.service;
+import com.C3UPD.UPD.services.ServiceEnterprise;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class controller {
-    service service;
+    ServiceEnterprise service;
     Enterprise enterprise1;
 
     public controller() {
-        this.service = new service();
+        this.service = new ServiceEnterprise();
 
     }
     @GetMapping("/hello")
