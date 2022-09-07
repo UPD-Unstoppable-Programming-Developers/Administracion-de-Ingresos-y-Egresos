@@ -1,19 +1,19 @@
 package com.C3UPD.UPD.controllers;
 
 import com.C3UPD.UPD.Models.Enterprise;
-import com.C3UPD.UPD.services.ServiceEnterprise;
+import com.C3UPD.UPD.services.EnterpriseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class controller {
-    ServiceEnterprise service;
+public class EnterpriseController {
+    EnterpriseService service;
     Enterprise enterprise1;
 
-    public controller() {
-        this.service = new ServiceEnterprise();
+    public EnterpriseController() {
+        this.service = new EnterpriseService();
 
     }
     @GetMapping("/hello")

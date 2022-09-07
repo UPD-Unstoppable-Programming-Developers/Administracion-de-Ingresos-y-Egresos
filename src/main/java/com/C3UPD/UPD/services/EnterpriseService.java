@@ -2,10 +2,10 @@ package com.C3UPD.UPD.services;
 
 import com.C3UPD.UPD.Models.Enterprise;
 
-public class ServiceEnterprise {
+public class EnterpriseService {
     Enterprise enterprise;
 
-    public ServiceEnterprise() {
+    public EnterpriseService() {
         this.enterprise = new Enterprise();
         enterprise.setName("Empresa UPD Reload");
 
