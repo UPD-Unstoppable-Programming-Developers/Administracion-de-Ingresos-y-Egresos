@@ -2,6 +2,8 @@ package com.C3UPD.UPD.controllers;
 
 import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.services.EnterpriseService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,11 +29,13 @@ public class EnterpriseController {
     }
 
     @PostMapping("/enterprise")
-    public List<Enterprise> enterprisePost(@RequestBody List<Enterprise> enterprises){
+    public ResponseEntity<Enterprise> create(@RequestBody Enterprise newEnterprise){
+        Enterprise enterprise = service.addEnterprise(newEnterprise);
+
         //this.enterprise1 = new Enterprise();
         //'enterprise1.setName("Empresa 123");
         //service.setEnterprise(enterprise1);
-        return enterprises;
+        return new ResponseEntity<>(enterprise, HttpStatus.CREATED);
     }
 
     @GetMapping("/enterprise/{id}")

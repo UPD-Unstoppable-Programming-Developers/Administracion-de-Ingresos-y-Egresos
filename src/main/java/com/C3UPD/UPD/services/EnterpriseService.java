@@ -43,6 +43,10 @@ public class EnterpriseService {
 
         this.enterprise = enterprise;
     }
+    public Enterprise addEnterprise(Enterprise newEnterprise){
+        enterprises.add(newEnterprise);
+        return enterprises.get(enterprises.size()-1);
 
+    }
 
 }
