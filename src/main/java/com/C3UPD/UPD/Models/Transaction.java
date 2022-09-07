@@ -8,13 +8,13 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name="Amount")
+    @Column(name = "Amount")
     private float Amount;
-    @Column(name="TypeAmount")
+    @Column(name = "TypeAmount")
     private boolean TypeAmount;
-    @Column(name="Concept")
+    @Column(name = "Concept")
     private String Concept;
-    @Column(name="User")
+    @Column(name = "User")
     private String User;
 
     // Constructor

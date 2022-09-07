@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 
 public class UpdApplication {
 
@@ -34,6 +32,5 @@ public class UpdApplication {
 		 * System.out.println("Monto de la transacción: " + transaction1.getAmount());
 		 */
 	}
-
 
 }

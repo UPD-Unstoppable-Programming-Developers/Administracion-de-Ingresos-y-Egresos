@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class service {
     Enterprise enterprise;
 
-    public service(){
+    public service() {
         this.enterprise = new Enterprise();
         enterprise.setName("Empresa UPD Reload");
 
