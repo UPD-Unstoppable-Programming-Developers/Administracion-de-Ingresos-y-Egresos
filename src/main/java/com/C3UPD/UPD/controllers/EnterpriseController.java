@@ -2,15 +2,12 @@ package com.C3UPD.UPD.controllers;
 
 import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.services.EnterpriseService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EnterpriseController {
     EnterpriseService service;
-    Enterprise enterprise1;
+    Enterprise enterprise;
 
     public EnterpriseController() {
         this.service = new EnterpriseService();
@@ -26,10 +23,10 @@ public class EnterpriseController {
     }
 
     @PostMapping("/enterprise")
-    public Enterprise EnterprisePost(){
-        this.enterprise1 = new Enterprise();
-        enterprise1.setName("Empresa 123");
-        service.setEnterprise(enterprise1);
-        return enterprise1;
+    public Enterprise EnterprisePost(@RequestBody Enterprise enterprise){
+        //this.enterprise1 = new Enterprise();
+        //'enterprise1.setName("Empresa 123");
+        //service.setEnterprise(enterprise1);
+        return enterprise;
     }
 }
