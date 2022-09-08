@@ -1,64 +1,52 @@
 package com.C3UPD.UPD.services;
 
+// Import Models
 import com.C3UPD.UPD.Models.Enterprise;
-
-import java.util.ArrayList;
+// Import Special Applications
 import java.util.List;
+import java.util.ArrayList;
+
 
 public class EnterpriseService {
-    Enterprise enterprise;
-    static List<Enterprise> enterprises;
+    Enterprise Enterprise;
+    static List<Enterprise> Enterprises;
     static {
-        enterprises = new ArrayList<Enterprise>();
-        enterprises.add(new Enterprise(1, "Empresa 1", "direccion 1", "Telefono 1", "NIT 1"));
-        enterprises.add(new Enterprise(2, "Empresa 2", "direccion 2", "Telefono 2", "NIT 2"));
-        enterprises.add(new Enterprise(3, "Empresa 3", "direccion 3", "Telefono 3", "NIT 3"));
-        enterprises.add(new Enterprise(4, "Empresa 4", "direccion 4", "Telefono 4", "NIT 4"));
-        enterprises.add(new Enterprise(5, "Empresa 5", "direccion 5", "Telefono 5", "NIT 5"));
-        System.out.println(enterprises);
+        Enterprises = new ArrayList<Enterprise>();
+        Enterprises.add(new Enterprise(1, "Empresa 1", "direccion 1", "Telefono 1", "NIT 1"));
+        Enterprises.add(new Enterprise(2, "Empresa 2", "direccion 2", "Telefono 2", "NIT 2"));
+        Enterprises.add(new Enterprise(3, "Empresa 3", "direccion 3", "Telefono 3", "NIT 3"));
+        Enterprises.add(new Enterprise(4, "Empresa 4", "direccion 4", "Telefono 4", "NIT 4"));
+        Enterprises.add(new Enterprise(5, "Empresa 5", "direccion 5", "Telefono 5", "NIT 5"));
+        System.out.println(Enterprises);
     }
 
-    public EnterpriseService() {
-        // this.enterprise = new Enterprise();
-        // enterprise.setName("Empresa UPD Reload 1");
-
+    // Servicios para la clase Empresa =
+    public List<Enterprise> GetEnterprises() {
+        return Enterprises;
     }
 
-    public List<Enterprise> getEnterprises() {
-
-        return enterprises;
+    public List<Enterprise> PostEnterprises() {
+        return Enterprises;
     }
 
-    public Enterprise getEnterpriseID(int id) {
-        enterprise = null;
-        for (Enterprise e : enterprises) {
+    // Servicios para EmpresaID =
+    public Enterprise GetEnterpriseID(int id) {
+        Enterprise = null;
+        for (Enterprise e : Enterprises) {
             if (e.getId() == id) {
-                enterprise = e;
+                Enterprise = e;
                 break;
             }
         }
-        return enterprise;
+        return Enterprise;
     }
 
-    public void setEnterprise(Enterprise enterprise) {
-
-        this.enterprise = enterprise;
+    public void SetEnterprise(Enterprise Enterprise) {
+        this.Enterprise = Enterprise;
     }
 
-    public Enterprise addEnterprise(Enterprise newEnterprise) {
-        enterprises.add(newEnterprise);
-        return enterprises.get(enterprises.size() - 1);
-
+    public Enterprise AddEnterprise(Enterprise NewEnterprise) {
+        Enterprises.add(NewEnterprise);
+        return Enterprises.get(Enterprises.size() - 1);
     }
-    public boolean checkEnterpriseExists(Integer id) {
-        return enterprise.existsById(id);
-    }
-
-    public boolean deleteEnterpriseById( Integer id) {
-        enterprise.deleteById (id) ;
-        return true;
-    }
-
-
-
 }

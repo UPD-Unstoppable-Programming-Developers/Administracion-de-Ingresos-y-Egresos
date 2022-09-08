@@ -7,7 +7,6 @@ import java.util.List;
 @Table(name = "Enterprise")
 public class Enterprise {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name = "name")
     private String name;
@@ -22,11 +21,8 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
-    //public Enterprise(int id,String name, String address, String phone, String NIT) {
-    //}
-
-    public Enterprise(int id,String name, String address, String phone, String NIT) {
-        this.id= id;
+    public Enterprise(int id, String name, String address, String phone, String NIT) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
