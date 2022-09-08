@@ -48,5 +48,15 @@ public class EnterpriseService {
         return enterprises.get(enterprises.size()-1);
 
     }
+    public boolean checkEnterpriseExists(Integer id) {
+        return enterprise.existsById(id);
+    }
+
+    public boolean deleteEnterpriseById( Integer id) {
+        enterprise.deleteById (id) ;
+        return true;
+    }
+
+
 
 }
