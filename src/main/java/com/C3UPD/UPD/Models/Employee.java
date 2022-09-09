@@ -22,10 +22,6 @@ public class Employee {
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 
-    public Employee() {
-
-    }
-
     public Employee(String email, String name, String enterprise, String role) {
         Email = email;
         Name = name;

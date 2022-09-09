@@ -15,14 +15,14 @@ public class EnterpriseController {
     EnterpriseService Service;
     Enterprise Enterprise;
 
-    public EnterpriseController(EnterpriseService Service) {
-        this.Service = Service;
+    public EnterpriseController() {
+        this.Service = new EnterpriseService();
     }
 
     // Orden 1 = Get (Enviar datos publicos)
-    @GetMapping("/Enterprise")
-    public List<Enterprise> Enterprise() {
-        return this.Service.GetRepository();
+    @GetMapping("/enterprise")
+    public List<Enterprise> GetEnterprises() {
+        return Service.GetEnterprises();
     }
 
     // Orden 2 = Post (Enviar datos ocultos)

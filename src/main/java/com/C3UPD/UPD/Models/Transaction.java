@@ -28,10 +28,6 @@ public class Transaction {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Transaction() {
-
-    }
-
     public Transaction(float amount, boolean typeAmount, String concept, String user, Transaction transactionOne) {
         Amount = amount;
         TypeAmount = typeAmount;
@@ -87,14 +83,5 @@ public class Transaction {
 
     public void setTransactionOne(Transaction transactionOne) {
         this.transactionOne = transactionOne;
-    }
-
-    // Methods = 
-    public double CrearMonto() {
-        return -1;
-    }
-
-    public String UserRegisttro() {
-        return "-1";
     }
 }
