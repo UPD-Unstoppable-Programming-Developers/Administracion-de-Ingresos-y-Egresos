@@ -17,16 +17,20 @@ public class Enterprise {
     @Column(name = "NIT")
     private String NIT;
 
+    Employee EmployeeOne;
+
     // Constructor
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
-    public Enterprise(int id, String name, String address, String phone, String NIT) {
+    public Enterprise(int id, String name, String address, String phone, String NIT, Employee employeeOne) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.NIT = NIT;
+        EmployeeOne = employeeOne;
+
     }
 
     // Getters and setters
@@ -68,5 +72,18 @@ public class Enterprise {
 
     public void setNIT(String NIT) {
         this.NIT = NIT;
+    }
+
+    public Employee getEmployeeOne() {
+        return this.EmployeeOne;
+    }
+
+    public void setEmployeeOne(Employee EmployeeOne) {
+        this.EmployeeOne = EmployeeOne;
+    }
+
+    @Override
+    public String toString() {
+        
     }
 }

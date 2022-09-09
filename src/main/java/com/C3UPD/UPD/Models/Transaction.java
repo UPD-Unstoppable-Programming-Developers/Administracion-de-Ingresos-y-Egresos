@@ -17,6 +17,8 @@ public class Transaction {
     @Column(name = "User")
     private String User;
 
+    Transaction transactionOne;
+
     // Constructor
     @ManyToOne
     @JoinColumn(name = "employee_id")
@@ -26,14 +28,12 @@ public class Transaction {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Transaction() {
-    }
-
-    public Transaction(float amount, boolean typeAmount, String concept, String user) {
+    public Transaction(float amount, boolean typeAmount, String concept, String user, Transaction transactionOne) {
         Amount = amount;
         TypeAmount = typeAmount;
         Concept = concept;
         User = user;
+        this.transactionOne = transactionOne;
     }
 
     // Getters and setters
@@ -75,5 +75,13 @@ public class Transaction {
 
     public void setUser(String user) {
         User = user;
+    }
+
+    public Transaction getTransactionOne() {
+        return this.transactionOne;
+    }
+
+    public void setTransactionOne(Transaction transactionOne) {
+        this.transactionOne = transactionOne;
     }
 }
