@@ -17,11 +17,16 @@ public class Enterprise {
     @Column(name = "NIT")
     private String NIT;
 
+    @Transient
     Employee EmployeeOne;
 
     // Constructor
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
+
+    public Enterprise() {
+        
+    }
 
     public Enterprise(int id, String name, String address, String phone, String NIT, Employee employeeOne) {
         this.id = id;
@@ -82,8 +87,5 @@ public class Enterprise {
         this.EmployeeOne = EmployeeOne;
     }
 
-    @Override
-    public String toString() {
-        
-    }
 }
+

@@ -11,7 +11,6 @@ public class UpdApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UpdApplication.class, args);
 
-		Enterprise EP1 = new Enterprise(name: "Miguel", address: "CALLE 10", phone: "3", NIT: "23")
 	}
 
 }
