@@ -2,15 +2,26 @@ package com.C3UPD.UPD.controllers;
 
 import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.services.EnterpriseService;
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping ("/enterprises/")
 public class EnterpriseController {
-    EnterpriseService service;
+
+    @Autowired
+    private EnterpriseService enterpriseService;
+
+    @GetMapping
+    private ResponseEntity<List<Enterprise>> listAllEnterprise (){
+        return ResponseEntity.ok(enterpriseService.getAllEnterprise());
+    }
+
+
+    /*
     Enterprise enterprise;
     //List<Enterprise> enterprises;
     //enterprises = new List<Enterprise>();
@@ -44,5 +55,5 @@ public class EnterpriseController {
     }
 
 
-
+   */
 }

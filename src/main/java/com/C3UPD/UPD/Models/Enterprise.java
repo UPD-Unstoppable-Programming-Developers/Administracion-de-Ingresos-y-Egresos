@@ -8,7 +8,7 @@ import java.util.List;
 public class Enterprise {
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "address")
@@ -22,23 +22,25 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
-    //public Enterprise(int id,String name, String address, String phone, String NIT) {
-    //}
+    public Enterprise() {
+    }
 
-    public Enterprise(int id,String name, String address, String phone, String NIT) {
-        this.id= id;
+    public Enterprise(Long id, String name, String address, String phone, String NIT) {
+        this.id= id; //Se agrega para funcionar con listas
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.NIT = NIT;
     }
 
+
     // Getters and setters
+
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

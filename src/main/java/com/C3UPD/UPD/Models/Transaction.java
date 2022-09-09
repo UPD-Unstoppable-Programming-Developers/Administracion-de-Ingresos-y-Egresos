@@ -6,16 +6,16 @@ import javax.persistence.*;
 @Table(name = "Transaction")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "Amount")
     private float Amount;
     @Column(name = "TypeAmount")
     private boolean TypeAmount;
     @Column(name = "Concept")
     private String Concept;
-    @Column(name = "User")
-    private String User;
+    @Column(name = "Users")
+    private String Users;
 
     // Constructor
     @ManyToOne
@@ -29,19 +29,21 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(float amount, boolean typeAmount, String concept, String user) {
+    public Transaction(Long id, float amount, boolean typeAmount, String concept, String users, Employee employee, Enterprise enterprise) {
+        this.id = id;
         Amount = amount;
         TypeAmount = typeAmount;
         Concept = concept;
-        User = user;
+        Users = users;
+        this.employee = employee;
+        this.enterprise = enterprise;
     }
 
-    // Getters and setters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,11 +71,27 @@ public class Transaction {
         Concept = concept;
     }
 
-    public String getUser() {
-        return User;
+    public String getUsers() {
+        return Users;
     }
 
-    public void setUser(String user) {
-        User = user;
+    public void setUsers(String users) {
+        Users = users;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
     }
 }

@@ -7,8 +7,8 @@ import java.util.List;
 @Table(name = "Employee")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "Email")
     private String Email;
     @Column(name = "Name")
@@ -25,7 +25,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String email, String name, String enterprise, String role) {
+    public Employee(Long id, String email, String name, String enterprise, String role) {
         Email = email;
         Name = name;
         Enterprise = enterprise;
@@ -37,7 +37,7 @@ public class Employee {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
