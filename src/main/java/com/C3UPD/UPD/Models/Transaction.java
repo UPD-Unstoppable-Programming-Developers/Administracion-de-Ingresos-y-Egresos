@@ -6,18 +6,16 @@ import javax.persistence.*;
 @Table(name = "Transaction")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "Amount")
-    private float Amount;
+    private float amount;
     @Column(name = "TypeAmount")
-    private boolean TypeAmount;
+    private boolean typeAmount;
     @Column(name = "Concept")
-    private String Concept;
-    @Column(name = "User")
-    private String User;
-
-    Transaction transactionOne;
+    private String concept;
+    @Column(name = "Users")
+    private String users;
 
     // Constructor
     @ManyToOne
@@ -28,60 +26,58 @@ public class Transaction {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Transaction(float amount, boolean typeAmount, String concept, String user, Transaction transactionOne) {
-        Amount = amount;
-        TypeAmount = typeAmount;
-        Concept = concept;
-        User = user;
-        this.transactionOne = transactionOne;
+    public Transaction(){
+
+    }
+
+    public Transaction(Long id,float amount, boolean typeAmount, String concept, String users) {
+        this.id=id;
+        this.amount = amount;
+        this.typeAmount = typeAmount;
+        this.concept = concept;
+        this.users = users;
+
     }
 
     // Getters and setters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public float getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(float amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 
     public boolean isTypeAmount() {
-        return TypeAmount;
+        return typeAmount;
     }
 
     public void setTypeAmount(boolean typeAmount) {
-        TypeAmount = typeAmount;
+        this.typeAmount = typeAmount;
     }
 
     public String getConcept() {
-        return Concept;
+        return concept;
     }
 
     public void setConcept(String concept) {
-        Concept = concept;
+        this.concept = concept;
     }
 
-    public String getUser() {
-        return User;
+    public String getUsers() {
+        return users;
     }
 
-    public void setUser(String user) {
-        User = user;
+    public void setUsers(String users) {
+        this.users = users;
     }
 
-    public Transaction getTransactionOne() {
-        return this.transactionOne;
-    }
-
-    public void setTransactionOne(Transaction transactionOne) {
-        this.transactionOne = transactionOne;
-    }
 }

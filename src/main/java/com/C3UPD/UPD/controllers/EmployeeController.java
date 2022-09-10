@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
+    /* 
     EmployeeService Service;
     Employee Employee;
 
@@ -31,4 +32,5 @@ public class EmployeeController {
         return Service.PostEmployees();
         
     }
+    */
 }

@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name = "Enterprise")
 public class Enterprise {
     @Id
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "address")
@@ -17,19 +17,21 @@ public class Enterprise {
     @Column(name = "NIT")
     private String NIT;
 
-    Employee EmployeeOne;
-
     // Constructor
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
-    public Enterprise(int id, String name, String address, String phone, String NIT, Employee employeeOne) {
+    public Enterprise(){
+
+    }
+
+    public Enterprise(Long id, String name, String address, String phone, String NIT) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.NIT = NIT;
-        EmployeeOne = employeeOne;
+  
 
     }
 
@@ -38,7 +40,7 @@ public class Enterprise {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -74,16 +76,8 @@ public class Enterprise {
         this.NIT = NIT;
     }
 
-    public Employee getEmployeeOne() {
-        return this.EmployeeOne;
-    }
-
-    public void setEmployeeOne(Employee EmployeeOne) {
-        this.EmployeeOne = EmployeeOne;
-    }
-
-    @Override
+    /*@Override
     public String toString() {
         
-    }
+    }*/
 }
