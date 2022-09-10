@@ -9,13 +9,19 @@ public class Transaction {
     //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "Amount")
-    private float Amount;
+    private float amount;
     @Column(name = "TypeAmount")
-    private boolean TypeAmount;
+    private boolean typeAmount;
     @Column(name = "Concept")
+<<<<<<< HEAD
     private String Concept;
     @Column(name = "Users")
     private String Users;
+=======
+    private String concept;
+    @Column(name = "Users")
+    private String users;
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
 
     // Constructor
     @ManyToOne
@@ -26,9 +32,11 @@ public class Transaction {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Transaction() {
+    public Transaction(){
+
     }
 
+<<<<<<< HEAD
     public Transaction(Long id, float amount, boolean typeAmount, String concept, String users, Employee employee, Enterprise enterprise) {
         this.id = id;
         Amount = amount;
@@ -39,6 +47,18 @@ public class Transaction {
         this.enterprise = enterprise;
     }
 
+=======
+    public Transaction(Long id,float amount, boolean typeAmount, String concept, String users) {
+        this.id=id;
+        this.amount = amount;
+        this.typeAmount = typeAmount;
+        this.concept = concept;
+        this.users = users;
+
+    }
+
+    // Getters and setters
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
     public Long getId() {
         return id;
     }
@@ -48,30 +68,31 @@ public class Transaction {
     }
 
     public float getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(float amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 
     public boolean isTypeAmount() {
-        return TypeAmount;
+        return typeAmount;
     }
 
     public void setTypeAmount(boolean typeAmount) {
-        TypeAmount = typeAmount;
+        this.typeAmount = typeAmount;
     }
 
     public String getConcept() {
-        return Concept;
+        return concept;
     }
 
     public void setConcept(String concept) {
-        Concept = concept;
+        this.concept = concept;
     }
 
     public String getUsers() {
+<<<<<<< HEAD
         return Users;
     }
 
@@ -93,5 +114,13 @@ public class Transaction {
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
+=======
+        return users;
     }
+
+    public void setUsers(String users) {
+        this.users = users;
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
+    }
+
 }

@@ -10,30 +10,40 @@ public class Employee {
     //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "Email")
-    private String Email;
+    private String email;
     @Column(name = "Name")
-    private String Name;
+    private String name;
     @Column(name = "Enterprise")
-    private String Enterprise;
+    private String enterprise;
     @Column(name = "Role")
-    private String Role;
+    private String role;
 
     // Constructor
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 
-    public Employee() {
+    public Employee(){
+
     }
 
+<<<<<<< HEAD
     public Employee(Long id, String email, String name, String enterprise, String role) {
         Email = email;
         Name = name;
         Enterprise = enterprise;
         Role = role;
+=======
+    public Employee(Long id,String email, String name, String enterprise, String role) {
+        this.id =id;
+        this.email = email;
+        this.name = name;
+        this.enterprise = enterprise;
+        this.role = role;
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
     }
 
     // Getters and setters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -42,34 +52,37 @@ public class Employee {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEnterprise() {
-        return Enterprise;
+        return enterprise;
     }
 
     public void setEnterprise(String enterprise) {
-        Enterprise = enterprise;
+        this.enterprise = enterprise;
     }
 
     public String getRole() {
-        return Role;
+        return role;
     }
 
     public void setRole(String role) {
-        Role = role;
+        this.role = role;
+    }
+
+    public static void add(Employee response) {
     }
 }
