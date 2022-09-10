@@ -26,12 +26,20 @@ public class Employee {
 
     }
 
+<<<<<<< HEAD
+    public Employee(Long id, String email, String name, String enterprise, String role) {
+        Email = email;
+        Name = name;
+        Enterprise = enterprise;
+        Role = role;
+=======
     public Employee(Long id,String email, String name, String enterprise, String role) {
         this.id =id;
         this.email = email;
         this.name = name;
         this.enterprise = enterprise;
         this.role = role;
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
     }
 
     // Getters and setters

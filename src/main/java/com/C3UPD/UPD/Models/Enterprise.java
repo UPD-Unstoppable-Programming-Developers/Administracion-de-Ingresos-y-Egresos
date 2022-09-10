@@ -7,6 +7,10 @@ import java.util.List;
 @Table(name = "Enterprise")
 public class Enterprise {
     @Id
+<<<<<<< HEAD
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+=======
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
     private Long id;
     @Column(name = "name")
     private String name;
@@ -21,12 +25,20 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
+<<<<<<< HEAD
+    public Enterprise() {
+    }
+
+    public Enterprise(Long id, String name, String address, String phone, String NIT) {
+        this.id= id; //Se agrega para funcionar con listas
+=======
     public Enterprise(){
 
     }
 
     public Enterprise(Long id, String name, String address, String phone, String NIT) {
         this.id = id;
+>>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -35,7 +47,9 @@ public class Enterprise {
 
     }
 
+
     // Getters and setters
+
     public long getId() {
         return id;
     }
