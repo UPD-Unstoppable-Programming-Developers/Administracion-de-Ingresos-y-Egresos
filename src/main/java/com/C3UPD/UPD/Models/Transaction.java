@@ -13,15 +13,8 @@ public class Transaction {
     @Column(name = "TypeAmount")
     private boolean typeAmount;
     @Column(name = "Concept")
-<<<<<<< HEAD
-    private String Concept;
-    @Column(name = "Users")
-    private String Users;
-=======
     private String concept;
-    @Column(name = "Users")
-    private String users;
->>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
+
 
     // Constructor
     @ManyToOne
@@ -36,29 +29,18 @@ public class Transaction {
 
     }
 
-<<<<<<< HEAD
-    public Transaction(Long id, float amount, boolean typeAmount, String concept, String users, Employee employee, Enterprise enterprise) {
+    public Transaction(Long id, float amount, boolean typeAmount, String concept, Employee employee, Enterprise enterprise) {
         this.id = id;
-        Amount = amount;
-        TypeAmount = typeAmount;
-        Concept = concept;
-        Users = users;
+        this.amount = amount;
+        this.typeAmount = typeAmount;
+        this.concept = concept;
         this.employee = employee;
         this.enterprise = enterprise;
     }
 
-=======
-    public Transaction(Long id,float amount, boolean typeAmount, String concept, String users) {
-        this.id=id;
-        this.amount = amount;
-        this.typeAmount = typeAmount;
-        this.concept = concept;
-        this.users = users;
-
-    }
-
     // Getters and setters
->>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
+
+
     public Long getId() {
         return id;
     }
@@ -91,15 +73,6 @@ public class Transaction {
         this.concept = concept;
     }
 
-    public String getUsers() {
-<<<<<<< HEAD
-        return Users;
-    }
-
-    public void setUsers(String users) {
-        Users = users;
-    }
-
     public Employee getEmployee() {
         return employee;
     }
@@ -114,13 +87,5 @@ public class Transaction {
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
-=======
-        return users;
     }
-
-    public void setUsers(String users) {
-        this.users = users;
->>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
-    }
-
 }

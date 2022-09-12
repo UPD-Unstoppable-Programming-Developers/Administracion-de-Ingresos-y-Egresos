@@ -13,8 +13,6 @@ public class Employee {
     private String email;
     @Column(name = "Name")
     private String name;
-    @Column(name = "Enterprise")
-    private String enterprise;
     @Column(name = "Role")
     private String role;
 
@@ -22,27 +20,26 @@ public class Employee {
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id")
+    private Enterprise enterprise;
+
     public Employee(){
 
     }
 
-<<<<<<< HEAD
-    public Employee(Long id, String email, String name, String enterprise, String role) {
-        Email = email;
-        Name = name;
-        Enterprise = enterprise;
-        Role = role;
-=======
-    public Employee(Long id,String email, String name, String enterprise, String role) {
-        this.id =id;
+    public Employee(Long id, String email, String name, String role, List<Transaction> transactionList, Enterprise enterprise) {
+        this.id = id;
         this.email = email;
         this.name = name;
-        this.enterprise = enterprise;
         this.role = role;
->>>>>>> b7a05de47489727360327c8b67e0448d9d4df034
+        this.transactionList = transactionList;
+        this.enterprise = enterprise;
     }
 
+
     // Getters and setters
+
     public Long getId() {
         return id;
     }
@@ -67,14 +64,6 @@ public class Employee {
         this.name = name;
     }
 
-    public String getEnterprise() {
-        return enterprise;
-    }
-
-    public void setEnterprise(String enterprise) {
-        this.enterprise = enterprise;
-    }
-
     public String getRole() {
         return role;
     }
@@ -83,6 +72,19 @@ public class Employee {
         this.role = role;
     }
 
-    public static void add(Employee response) {
+    public List<Transaction> getTransactionList() {
+        return transactionList;
+    }
+
+    public void setTransactionList(List<Transaction> transactionList) {
+        this.transactionList = transactionList;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
     }
 }
