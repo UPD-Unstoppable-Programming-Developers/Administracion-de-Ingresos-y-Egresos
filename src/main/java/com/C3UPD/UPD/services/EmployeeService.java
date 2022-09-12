@@ -2,7 +2,7 @@ package com.C3UPD.UPD.services;
 
 // Import Models
 import com.C3UPD.UPD.Models.Employee;
-import com.C3UPD.UPD.Repository.EmployeeRepository;
+import com.C3UPD.UPD.repository.EmployeeRepository;
 // Import Special Applications
 import java.util.List;
 import java.util.Optional;

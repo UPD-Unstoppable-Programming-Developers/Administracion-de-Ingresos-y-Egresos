@@ -2,7 +2,7 @@ package com.C3UPD.UPD.services;
 
 // Import Models
 import com.C3UPD.UPD.Models.Transaction;
-import com.C3UPD.UPD.Repository.TransactionRepository;
+import com.C3UPD.UPD.repository.TransactionRepository;
 
 // Import Special Applications
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.C3UPD.UPD.services;// Import Models
 import com.C3UPD.UPD.Models.Enterprise;
-import com.C3UPD.UPD.Repository.EnterpriseRepository;
+import com.C3UPD.UPD.repository.EnterpriseRepository;
 
 // Import Special Applications
 import java.util.List;
