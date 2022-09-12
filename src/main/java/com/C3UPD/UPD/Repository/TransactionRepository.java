@@ -1,4 +1,4 @@
-package com.C3UPD.UPD.repository;
+package com.C3UPD.UPD.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
