@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "Transaction")
 public class Transaction {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    // @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "Amount")
     private float amount;
@@ -16,22 +16,20 @@ public class Transaction {
     private boolean typeAmount;
     @Column(name = "Concept")
     private String concept;
-
-
-    // Constructor
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
-
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Transaction(){
+    // Constructor
+    public Transaction() {
 
     }
 
-    public Transaction(Long id, float amount, boolean typeAmount, String concept, Employee employee, Enterprise enterprise) {
+    public Transaction(Long id, float amount, boolean typeAmount, String concept, Employee employee,
+            Enterprise enterprise) {
         this.id = id;
         this.amount = amount;
         this.typeAmount = typeAmount;
@@ -40,9 +38,16 @@ public class Transaction {
         this.enterprise = enterprise;
     }
 
+    // Method
+    public int typeAmount(int amount, boolean typeAmount) {
+        if (typeAmount == true) {
+            return amount;
+        } else {
+            return -amount;
+        }
+    }
+
     // Getters and setters
-
-
     public Long getId() {
         return id;
     }
@@ -83,6 +88,7 @@ public class Transaction {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
     @JsonBackReference
     public Enterprise getEnterprise() {
         return enterprise;
