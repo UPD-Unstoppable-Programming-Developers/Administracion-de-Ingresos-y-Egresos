@@ -1,5 +1,7 @@
 package com.C3UPD.UPD.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -73,6 +75,7 @@ public class Transaction {
         this.concept = concept;
     }
 
+    @JsonBackReference
     public Employee getEmployee() {
         return employee;
     }
@@ -80,7 +83,7 @@ public class Transaction {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
-
+    @JsonBackReference
     public Enterprise getEnterprise() {
         return enterprise;
     }

@@ -1,5 +1,7 @@
 package com.C3UPD.UPD.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -36,7 +38,6 @@ public class Employee {
         this.transactionList = transactionList;
         this.enterprise = enterprise;
     }
-
 
     // Getters and setters
 
@@ -79,7 +80,7 @@ public class Employee {
     public void setTransactionList(List<Transaction> transactionList) {
         this.transactionList = transactionList;
     }
-
+    @JsonBackReference
     public Enterprise getEnterprise() {
         return enterprise;
     }

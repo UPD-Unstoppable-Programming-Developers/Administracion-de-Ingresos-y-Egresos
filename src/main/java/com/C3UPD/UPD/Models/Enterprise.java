@@ -1,5 +1,7 @@
 package com.C3UPD.UPD.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,9 +9,7 @@ import java.util.List;
 @Table(name = "Enterprise")
 public class Enterprise {
     @Id
-
     //@GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
     @Column(name = "name")
     private String name;
@@ -42,6 +42,8 @@ public class Enterprise {
     }
 
     // Getters and setters
+
+
 
 
     public Long getId() {
@@ -83,7 +85,7 @@ public class Enterprise {
     public void setNIT(String NIT) {
         this.NIT = NIT;
     }
-
+    @JsonManagedReference
     public List<Transaction> getTransactionList() {
         return transactionList;
     }
@@ -91,7 +93,7 @@ public class Enterprise {
     public void setTransactionList(List<Transaction> transactionList) {
         this.transactionList = transactionList;
     }
-
+    @JsonManagedReference
     public List<Employee> getEmployeeList() {
         return employeeList;
     }
@@ -99,4 +101,5 @@ public class Enterprise {
     public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
     }
+
 }
