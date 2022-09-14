@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.services;
 
 // Import Models
+import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.Models.Transaction;
 import com.C3UPD.UPD.Repository.TransactionRepository;
 
@@ -25,6 +26,9 @@ public class TransactionService {
     public List<Transaction> getAllTransaction(){
         return transactionRepository.findAll();
     }
+
+
+
 
     public void delete (Transaction transaction){
         transactionRepository.delete(transaction);

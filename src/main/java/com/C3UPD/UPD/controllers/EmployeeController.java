@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.controllers;
 
 // Import Functions
+import com.C3UPD.UPD.Models.Enterprise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,18 +15,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/employees")
+
 public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping()
+    @GetMapping("/users")
     private ResponseEntity<List<Employee>> listAllEmployee (){
         return ResponseEntity.ok(employeeService.getAllEmployee());
     }
 
-    @PostMapping()
+    @PostMapping("/users")
     private ResponseEntity<Employee> save (@RequestBody Employee employee){
         Employee temporal = employeeService.create(employee);
 
@@ -37,15 +38,25 @@ public class EmployeeController {
         }
     }
 
-    @DeleteMapping()
-    private ResponseEntity<Void> deleteEmployee (@RequestBody Employee employee){
+    @DeleteMapping("/user/{id}")
+    private ResponseEntity<Void> deleteEmployee (@PathVariable ("id") Long id){
+        Employee employee = employeeService.findById(id).get();
         employeeService.delete(employee);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping (value = "{id}")
+    @GetMapping ("/user/{id}")
     private ResponseEntity<Optional<Employee>> listEmployeeByID (@PathVariable ("id") Long id){
         return ResponseEntity.ok(employeeService.findById(id));
     }
 
+    @PatchMapping("/user/{id}")
+    private ResponseEntity<Employee> patchEmployee(@RequestBody Employee employeeParam, @PathVariable Long id) {
+        try {
+            Employee employee = employeeService.findById(id).get();
+            return new ResponseEntity<Employee>(employeeService.create(employeeParam), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

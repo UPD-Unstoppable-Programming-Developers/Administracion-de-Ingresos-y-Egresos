@@ -19,17 +19,18 @@ import com.C3UPD.UPD.Models.Transaction;
 import com.C3UPD.UPD.services.TransactionService;
 
 @RestController
-@RequestMapping("/transaction/")
+
 public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @GetMapping()
+    @GetMapping("/enterprises/movements")
     private ResponseEntity<List<Transaction>> listAllTransaction (){
         return ResponseEntity.ok(transactionService.getAllTransaction());
+
     }
 
-    @PostMapping()
+    @PostMapping("/enterprises/movements")
     private ResponseEntity<Transaction> save (@RequestBody Transaction transaction){
         Transaction temporal = transactionService.create(transaction);
 
@@ -41,14 +42,15 @@ public class TransactionController {
         }
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/enterprises/movements")
     private ResponseEntity<Void> deleteTransaction (@RequestBody Transaction transaction){
         transactionService.delete(transaction);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping (value = "{id}")
+    @GetMapping ("/enterprises/{id}/movements")
     private ResponseEntity<Optional<Transaction>> listTransactionByID (@PathVariable ("id") Long id){
+
         return ResponseEntity.ok(transactionService.findById(id));
     }
 
