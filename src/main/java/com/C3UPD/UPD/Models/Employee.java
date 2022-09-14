@@ -20,7 +20,7 @@ public class Employee {
     private String role;
 
     // Constructor
-    //@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 

@@ -21,9 +21,11 @@ public class Enterprise {
     private String NIT;
 
     // Constructor
+    @JsonIgnore
     @OneToMany(mappedBy = "enterprise")
     private List<Transaction> transactionList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "enterprise")
     private List<Employee> employeeList;
 
@@ -85,7 +87,7 @@ public class Enterprise {
     }
 
 
-    @JsonManagedReference
+
 
     public List<Transaction> getTransactionList() {
         return transactionList;
@@ -96,7 +98,7 @@ public class Enterprise {
     }
 
 
-    @JsonManagedReference
+
     public List<Employee> getEmployeeList() {
         return employeeList;
     }
