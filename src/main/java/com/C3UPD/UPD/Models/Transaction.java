@@ -80,7 +80,7 @@ public class Transaction {
         this.concept = concept;
     }
 
-    @JsonBackReference
+
     public Employee getEmployee() {
         return employee;
     }
@@ -89,7 +89,7 @@ public class Transaction {
         this.employee = employee;
     }
 
-    @JsonBackReference
+
     public Enterprise getEnterprise() {
         return enterprise;
     }

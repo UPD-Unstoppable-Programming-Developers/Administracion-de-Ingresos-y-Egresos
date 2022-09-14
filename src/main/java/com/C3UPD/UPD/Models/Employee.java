@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Employee {
     private String role;
 
     // Constructor
+    @JsonIgnore
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
 
@@ -80,7 +82,7 @@ public class Employee {
     public void setTransactionList(List<Transaction> transactionList) {
         this.transactionList = transactionList;
     }
-    @JsonBackReference
+
     public Enterprise getEnterprise() {
         return enterprise;
     }

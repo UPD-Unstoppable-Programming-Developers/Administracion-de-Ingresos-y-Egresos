@@ -10,6 +10,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TransactionService {
@@ -19,6 +20,7 @@ public class TransactionService {
     public Transaction create(Transaction transaction){
         return transactionRepository.save(transaction);
     }
+
 
     public List<Transaction> getAllEnterprise(){
         return transactionRepository.findAll();
