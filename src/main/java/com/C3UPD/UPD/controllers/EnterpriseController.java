@@ -47,4 +47,13 @@ public class EnterpriseController {
         return ResponseEntity.ok(enterpriseService.findById(id));
     }
 
+    @PatchMapping(value = "{id}")
+    private ResponseEntity<Enterprise> patchEnterprise(@RequestBody Enterprise enterpriseParam,@PathVariable Long id) {
+        try {
+            Enterprise enterprise = enterpriseService.findById(id).get();
+            return new ResponseEntity<Enterprise>(enterpriseService.create(enterpriseParam), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
