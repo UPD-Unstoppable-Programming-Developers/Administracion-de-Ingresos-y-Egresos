@@ -20,7 +20,7 @@ public class TransactionService {
         return transactionRepository.save(transaction);
     }
 
-    public List<Transaction> getAllEnterprise(){
+    public static List<Transaction> getAllEnterprise(){
         return transactionRepository.findAll();
     }
 
