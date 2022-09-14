@@ -2,14 +2,13 @@ package com.C3UPD.UPD.services;
 
 // Import Models
 import com.C3UPD.UPD.Models.Employee;
-import com.C3UPD.UPD.repository.EmployeeRepository;
+import com.C3UPD.UPD.Repository.EmployeeRepository;
 // Import Special Applications
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class EmployeeService {
@@ -20,7 +19,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public List<Employee> getAllEnterprise(){
+    public List<Employee> getAllEmployee(){
 
         return employeeRepository.findAll();
     }

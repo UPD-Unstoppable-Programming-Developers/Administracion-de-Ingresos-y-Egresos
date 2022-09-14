@@ -22,7 +22,7 @@ public class EmployeeController {
 
     @GetMapping()
     private ResponseEntity<List<Employee>> listAllEmployee (){
-        return ResponseEntity.ok(employeeService.getAllEnterprise());
+        return ResponseEntity.ok(employeeService.getAllEmployee());
     }
 
     @PostMapping()
