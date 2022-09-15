@@ -36,6 +36,7 @@ public class EnterpriseController {
         }
     }
 
+
     @DeleteMapping(value = "{id}")
     private ResponseEntity<Void> deleteEnterprise(@PathVariable("id") Long id) {
         Enterprise enterprise = enterpriseService.findById(id).get();

@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import com.C3UPD.UPD.Models.Enterprise;
+import com.C3UPD.UPD.services.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,8 @@ import com.C3UPD.UPD.services.TransactionService;
 public class TransactionController {
     @Autowired
     private TransactionService transactionService;
+    @Autowired
+    private EnterpriseService enterpriseService;
 
     @GetMapping("/enterprises/movements")
     private ResponseEntity<List<Transaction>> listAllTransaction (){
@@ -42,16 +46,38 @@ public class TransactionController {
         }
     }
 
+    @PostMapping("/enterprises/{id}/movements")
+    private ResponseEntity<Transaction> save (@RequestBody Transaction transaction, @PathVariable Long id){
+
+        Transaction temporal = transaction;
+        Enterprise enterprise = enterpriseService.findById(id).get();
+        temporal.setEnterprise(enterprise);
+        transactionService.create(transaction);
+
+        try {
+            return ResponseEntity.created(new URI("/transaction"+temporal.getId())).body(temporal);
+
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+
     @DeleteMapping("/enterprises/movements")
     private ResponseEntity<Void> deleteTransaction (@RequestBody Transaction transaction){
         transactionService.delete(transaction);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping ("/enterprises/{id}/movements")
-    private ResponseEntity<Optional<Transaction>> listTransactionByID (@PathVariable ("id") Long id){
+    private ResponseEntity<Void> deleteTransactionByEnterpriseID (@PathVariable ("id") Long id){
+        transactionService.deleteByEnterpriseID(id);
+        return ResponseEntity.ok().build();
+    }
 
-        return ResponseEntity.ok(transactionService.findById(id));
+    @GetMapping ("/enterprises/{id}/movements")
+    private ResponseEntity<Optional<List<Transaction>>> listTransactionByID (@PathVariable ("id") Long id){
+
+        return ResponseEntity.ok(transactionService.findTransactionByEnterpriseId(id));
     }
 
     

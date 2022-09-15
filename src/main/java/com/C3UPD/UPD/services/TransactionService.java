@@ -27,12 +27,18 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
-
-
+    public Optional<List<Transaction>> findTransactionByEnterpriseId(Long id){
+        return transactionRepository.findByEnterpriseId(id);
+    }
 
     public void delete (Transaction transaction){
         transactionRepository.delete(transaction);
     }
+
+    public void deleteByEnterpriseID (Long id){
+        transactionRepository.deleteByEnterpriseId(id);
+    }
+
 
     public Optional<Transaction> findById (Long id){
         return transactionRepository.findById(id);
