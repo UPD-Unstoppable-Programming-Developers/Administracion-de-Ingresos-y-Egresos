@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    Optional<List<Transaction>> findByEnterpriseId(Long id);
-    Optional<List<Transaction>> deleteByEnterpriseId(Long id);
+    List<Transaction> findByEnterpriseId(Long id);
+    Transaction deleteByEnterpriseId(Long id);
 
 }

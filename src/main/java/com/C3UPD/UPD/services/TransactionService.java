@@ -27,7 +27,7 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
-    public Optional<List<Transaction>> findTransactionByEnterpriseId(Long id){
+    public List<Transaction> findTransactionByEnterpriseId(Long id){
         return transactionRepository.findByEnterpriseId(id);
     }
 
