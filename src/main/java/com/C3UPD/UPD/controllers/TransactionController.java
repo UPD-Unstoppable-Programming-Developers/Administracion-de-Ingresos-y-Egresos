@@ -46,7 +46,7 @@ public class TransactionController {
         Transaction temporal = transaction;
         Enterprise enterprise = enterpriseService.findById(id).get();
         temporal.setEnterprise(enterprise);
-        transactionService.create(transaction);
+        transactionService.create(temporal);
 
         try {
             return ResponseEntity.created(new URI("/transaction"+temporal.getId())).body(temporal);
@@ -68,9 +68,7 @@ public class TransactionController {
         List<Transaction> transactionList;
         transactionList= transactionService.findTransactionByEnterpriseId(id);
         for(Transaction transaction : transactionList){
-            Long transactionsID = transaction.getId();
-            Transaction transaction1 = transactionService.findById(transactionsID).get();
-            transactionService.delete(transaction1);
+            transactionService.delete(transaction);
         }
 
         return ResponseEntity.ok().build();
