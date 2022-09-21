@@ -3,7 +3,6 @@ package com.C3UPD.UPD.controllers;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import com.C3UPD.UPD.Models.Enterprise;
 import com.C3UPD.UPD.services.EnterpriseService;
@@ -36,7 +35,6 @@ public class EnterpriseController {
         }
     }
 
-
     @DeleteMapping(value = "{id}")
     private ResponseEntity<Void> deleteEnterprise(@PathVariable("id") Long id) {
         Enterprise enterprise = enterpriseService.findById(id).get();
@@ -50,7 +48,7 @@ public class EnterpriseController {
     }
 
     @PatchMapping(value = "{id}")
-    private ResponseEntity<Enterprise> patchEnterprise(@RequestBody Enterprise enterpriseParam,@PathVariable Long id) {
+    private ResponseEntity<Enterprise> patchEnterprise(@RequestBody Enterprise enterpriseParam, @PathVariable Long id) {
         try {
             Enterprise enterprise = enterpriseService.findById(id).get();
             return new ResponseEntity<Enterprise>(enterpriseService.create(enterpriseParam), HttpStatus.OK);

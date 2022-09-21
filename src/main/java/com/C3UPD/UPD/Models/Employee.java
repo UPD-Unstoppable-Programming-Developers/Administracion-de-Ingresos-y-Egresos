@@ -1,8 +1,6 @@
 package com.C3UPD.UPD.Models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +8,6 @@ import java.util.List;
 @Table(name = "Employee")
 public class Employee {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "Email")
     private String email;
@@ -18,21 +15,19 @@ public class Employee {
     private String name;
     @Column(name = "Role")
     private String role;
-
-    // Constructor
     @JsonIgnore
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
-
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    public Employee(){
+    public Employee() {
 
     }
 
-    public Employee(Long id, String email, String name, String role, List<Transaction> transactionList, Enterprise enterprise) {
+    public Employee(Long id, String email, String name, String role, List<Transaction> transactionList,
+            Enterprise enterprise) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -40,8 +35,6 @@ public class Employee {
         this.transactionList = transactionList;
         this.enterprise = enterprise;
     }
-
-    // Getters and setters
 
     public Long getId() {
         return id;

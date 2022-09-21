@@ -1,14 +1,11 @@
 package com.C3UPD.UPD.Models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Transaction")
 public class Transaction {
     @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "Amount")
     private float amount;
@@ -23,7 +20,6 @@ public class Transaction {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
-    // Constructor
     public Transaction() {
 
     }
@@ -80,7 +76,6 @@ public class Transaction {
         this.concept = concept;
     }
 
-
     public Employee getEmployee() {
         return employee;
     }
@@ -88,7 +83,6 @@ public class Transaction {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
-
 
     public Enterprise getEnterprise() {
         return enterprise;
