@@ -25,10 +25,17 @@ public class EmployeeService {
     }
 
     public void delete (Employee employee){
+
         employeeRepository.delete(employee);
     }
 
+    public void deleteByID(Long id){
+
+        employeeRepository.deleteById(id);
+    }
+
     public Optional<Employee> findById (Long id){
+
         return employeeRepository.findById(id);
     }
 
