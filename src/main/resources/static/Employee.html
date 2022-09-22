@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Inicio</title>
+    <title>Employees</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,11 +11,18 @@
         <div class="btn-menu">
           <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
-    <h1>ADMINISTRACIÓN DE INGRESOS Y EGRESOS</h1>
+    <h1>Sistema de Gestion de Usuarios</h1>
     <div id="Buttons">
-        <div><a href="#">Sistema de Gestión de Ingresos y Gastos</a></div>
-        <div><a href="Employee.html">Sistema de Gestión de Usuarios</a></div>
-        <div><a href="#">Sistema de Gestión de Empresas</a></div>
+        <form>
+            <label for="Nombre">Nombre</label>
+            <input type="text" id="Nombre" name="Nombre" />
+            <label fo
+            r="Correo">Correo</label>
+            <input type="text" id="Correo" name="Correo" />
+            <label for="Rol">Rol: </label>
+            <textarea id="Rol"></textarea>
+            <input type="submit" value="Ingresar" />
+          </form>
     </div>
     <div class="capa"></div>
     <input type="checkbox" id="btn-menu" />
