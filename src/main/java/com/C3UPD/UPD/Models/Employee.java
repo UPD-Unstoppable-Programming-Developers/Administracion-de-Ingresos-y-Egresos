@@ -11,6 +11,8 @@ public class Employee {
     private Long id;
     @Column(name = "Email")
     private String email;
+    @Column(name = "Password")
+    private String password;
     @Column(name = "Name")
     private String name;
     @Column(name = "Role")
@@ -26,10 +28,10 @@ public class Employee {
 
     }
 
-    public Employee(Long id, String email, String name, String role, List<Transaction> transactionList,
-            Enterprise enterprise) {
+    public Employee(Long id, String email, String password, String name, String role, List<Transaction> transactionList, Enterprise enterprise) {
         this.id = id;
         this.email = email;
+        this.password = password;
         this.name = name;
         this.role = role;
         this.transactionList = transactionList;
@@ -50,6 +52,14 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
