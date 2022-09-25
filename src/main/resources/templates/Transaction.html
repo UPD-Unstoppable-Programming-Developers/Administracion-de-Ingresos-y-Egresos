@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <title>Ingresos y Egresos</title>
@@ -13,14 +13,20 @@
     </header>
     <h2>INGRESOS Y EGRESOS</h2>
     <div id="Buttons">
-        <form>
+        <form method="POST"  th:action="@{/transaction/post}" th:object="${newTransaction}">
             <h3>Nuevo Movimiento de Dinero</h3>
+            <label for="id">id</label><br>
+            <input type="text" id="id" name="id" th:field="*{id}" /><br>
             <label for="Monto">Monto</label><br>
-            <input type="text" id="Monto" name="Monto" /><br>
+            <input type="text" id="Monto" name="Monto" th:field="*{amount}" /><br>
+            <label for="Tipo Monto">Tipo Monto</label><br>
+            <input type="checkbox" id="Tipo Monto" name="Tipo Monto" th:field="*{typeAmount}" /><br>
             <label for="Concepto">Concepto</label><br>
-            <input type="text" id="Concepto" name="Concepto" /><br>
-            <label for="Fecha">Fecha</label><br>
-            <input type="text" id="Fecha" name="Fecha" /><br>
+            <input type="text" id="Concepto" name="Concepto" th:field="*{concept}"/><br>
+            <label for="Empleado">Empleado</label><br>
+            <input type="text" id="Empleado" name="Empleado" th:field="*{employee}" /><br>
+            <label for="Empresa">Empresa</label><br>
+            <input type="text" id="Empresa" name="Empresa" th:field="*{enterprise}" /><br>
             <input type="submit" value="Ingresar" />
 
           </form>

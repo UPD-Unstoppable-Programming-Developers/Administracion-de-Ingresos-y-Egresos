@@ -13,6 +13,7 @@ public class Transaction {
     private boolean typeAmount;
     @Column(name = "Concept")
     private String concept;
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;

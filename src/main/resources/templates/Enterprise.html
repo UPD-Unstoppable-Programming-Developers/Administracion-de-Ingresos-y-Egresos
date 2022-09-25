@@ -7,20 +7,24 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <div class="btn-menu">
+      <div class="container"></div>
+        <div class="btn-menu"></div>
           <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
     <h2>EMPRESAS</h2>
     <div id="Buttons">
-        <form>
+        <form method="POST"  th:action="@{/enterprise/post}" th:object="${newEnterprise}">
             <h3>Nueva Empresa</h3>
+            <label for="id">id</label><br>
+            <input type="text" id="id" name="id" th:field="*{id}"/><br>
             <label for="Nombre">Nombre</label><br>
-            <input type="text" id="Nombre" name="Nombre" /><br>
-            <label for="Correo">Correo</label><br>
-            <input type="text" id="Correo" name="Correo" /><br>
-            <label for="Lider">Lider </label><br>
-            <input type="text" id="Lider" name="Lider" /><br>
+            <input type="text" id="Nombre" name="Nombre" th:field="*{name}" /> <br>
+            <label for="Direccion">Direccion</label> <br>
+            <input type="text" id="Direccion" name="Direccion" th:field="*{address}" /><br>
+            <label for="Telefono">Telefono </label><br>
+            <input type="text" id="Telefono" name="Telefono" th:field="*{phone}" /><br>
+            <label for="NIT">NIT </label><br>
+            <input type="text" id="NIT" name="NIT" th:field="*{NIT}" /><br>
             <input type="submit" value="Ingresar" />
 
           </form>

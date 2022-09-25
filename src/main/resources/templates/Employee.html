@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <title>Employees</title>
@@ -7,23 +7,27 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <div class="btn-menu">
+      <div class="container"></div>
+        <div class="btn-menu"></div>
           <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
     <h2>USUARIOS</h2>
     <div id="Buttons">
-        <form>
+        <form method="POST"  th:action="@{/employee/post}" th:object="${newEmployee}">
             <h3>Nuevo Usuario</h3>
+            <label for="id">id</label><br>
+            <input type="text" id="id" name="id" th:field="*{id}"/><br>
             <label for="Nombre">Nombre</label><br>
-            <input type="text" id="Nombre" name="Nombre" /><br>
+            <input type="text" id="Nombre" name="Nombre" th:field="*{name}"/><br>
             <label for="Correo">Correo</label><br>
-            <input type="text" id="Correo" name="Correo" /><br>
-            <label for="Rol">Rol </label><br>
-            <input type="text" id="Rol" name="Rol" /><br>
+            <input type="text" id="Correo" name="Correo" th:field="*{email}"/><br>
+            <label for="Rol">Rol </label> <br>
+            <input type="text" id="Rol" name="Rol" th:field="*{role}" /><br>
+            <label for="Empresa_id">Empresa_id </label> <br>
+            <input type="text" id="Empresa_id" name="Empresa_id" th:field="*{enterprise}" /><br>
             <input type="submit" value="Ingresar" />
 
-          </form>
+        </form>
     </div>
     <div class="capa"></div>
     <input type="checkbox" id="btn-menu" />
