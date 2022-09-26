@@ -25,8 +25,7 @@ public class Transaction {
 
     }
 
-    public Transaction(Long id, float amount, boolean typeAmount, String concept, Employee employee,
-            Enterprise enterprise) {
+    public Transaction(Long id, float amount, boolean typeAmount, String concept, Employee employee, Enterprise enterprise) {
         this.id = id;
         this.amount = amount;
         this.typeAmount = typeAmount;
@@ -45,6 +44,8 @@ public class Transaction {
     }
 
     // Getters and setters
+
+
     public Long getId() {
         return id;
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 @Table(name = "Employee")
 public class Employee {
@@ -15,8 +16,7 @@ public class Employee {
     private String password;
     @Column(name = "Name")
     private String name;
-    @Column(name = "Role")
-    private String role;
+
     @JsonIgnore
     @OneToMany(mappedBy = "employee")
     private List<Transaction> transactionList;
@@ -24,18 +24,22 @@ public class Employee {
     @JoinColumn(name = "enterprise_id")
     private Enterprise enterprise;
 
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    private List<Role> role;
+
     public Employee() {
 
     }
 
-    public Employee(Long id, String email, String password, String name, String role, List<Transaction> transactionList, Enterprise enterprise) {
+    public Employee(Long id, String email, String password, String name, List<Transaction> transactionList, Enterprise enterprise, List<Role> role) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
-        this.role = role;
         this.transactionList = transactionList;
         this.enterprise = enterprise;
+        this.role = role;
     }
 
     public Long getId() {
@@ -70,14 +74,6 @@ public class Employee {
         this.name = name;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public List<Transaction> getTransactionList() {
         return transactionList;
     }
@@ -92,5 +88,26 @@ public class Employee {
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
+    }
+
+    public List<Role> getRole() {
+        return role;
+    }
+
+    public void setRole(List<Role> role) {
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", transactionList=" + transactionList +
+                ", enterprise=" + enterprise +
+                ", role=" + role +
+                '}';
     }
 }

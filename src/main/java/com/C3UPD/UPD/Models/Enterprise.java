@@ -95,4 +95,16 @@ public class Enterprise {
         this.employeeList = employeeList;
     }
 
+    @Override
+    public String toString() {
+        return "Enterprise{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", NIT='" + NIT + '\'' +
+                ", transactionList=" + transactionList +
+                ", employeeList=" + employeeList +
+                '}';
+    }
 }

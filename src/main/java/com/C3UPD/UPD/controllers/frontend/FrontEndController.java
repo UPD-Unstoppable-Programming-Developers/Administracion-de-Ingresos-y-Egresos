@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class FrontEndController {
@@ -37,6 +38,11 @@ public class FrontEndController {
     @GetMapping("/login")
     public String getLogin(Model model){
         model.addAttribute("formUsers",new Employee());
+        /*Long a = 1L;
+        Optional<Employee> employee= employeeService.findById(a);
+        System.out.println(employee);
+        */
+
         return "login";
     }
 

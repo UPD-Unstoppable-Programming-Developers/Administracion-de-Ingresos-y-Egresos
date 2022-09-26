@@ -5,4 +5,5 @@ import com.C3UPD.UPD.Models.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     public void deleteById(Long id);
+    public Employee findByemail(String email);
 }
