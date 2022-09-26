@@ -37,8 +37,8 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    public Employee findbyemail(String email){
-        return employeeRepository.findByemail(email);
+    public Employee findbyEmail(String email){
+        return employeeRepository.findByEmail(email);
     }
 
 }

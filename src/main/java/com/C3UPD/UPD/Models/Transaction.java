@@ -16,6 +16,7 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    //@Transient
     private Employee employee;
     @ManyToOne
     @JoinColumn(name = "enterprise_id")

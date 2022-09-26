@@ -21,7 +21,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
         Employee employee = null;
         try {System.out.println(email);
-            employee = employeeService.findbyemail(email);
+            employee = employeeService.findbyEmail(email);
             System.out.println(employee);
         } catch (Exception e){
             e.printStackTrace();

@@ -32,6 +32,7 @@ public class FrontEndController {
 
     @GetMapping("/")
     public String getIndex(){
+
         return "redirect:/login";
     }
 
