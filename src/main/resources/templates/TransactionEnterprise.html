@@ -2,56 +2,63 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
-    <title>Ingresos y Gastos</title>
+    <title>Transacción por Empresa</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="container"></div>
-      <div class="btn-menu"></div>
+        <div class="btn-menu"></div>
           <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
-    <h1>ADMINISTRACIÓN DE INGRESOS Y EGRESOS</h1>
+    <h1>TRANSACCION POR EMPRESA</h1>
     <a href="transaction/add" id="Nuevo">Nuevo</a>
 
-
-
-
     <div id="Table">
-        <h2>Listado de empresas</h2>
+        <h2>INGRESOS Y EGRESOS</h2>
     </div>
 
 
-    <table class="table">
+
+
+
+      <table class="table">
         <thead>
         <tr>
-          <th scope="col">Id Empresa</th>
-          <th scope="col">Nombre Empresa</th>
-          <th scope="col">Direccion</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">NIT</th>
+          <th scope="col">Id transacción</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Tipo Cantidad</th>
+          <th scope="col">Concepto</th>
+          <th scope="col">Empleado</th>
+          <th scope="col">Empresa</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="enterprise : ${enterprises}">
-          <td th:text="${enterprise.id}"></td>
-          <td th:text="${enterprise.name}"></td>
-          <td th:text="${enterprise.address}"></td>
-          <td th:text="${enterprise.phone}"></td>
-          <td th:text="${enterprise.NIT}"></td>
-          <td>
-            <div>
-              <form th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}" th:method="get">
-                <button type="submit">Ver transacciones</button>
-              </form>
-            </div>
-          </td>
+        <tr th:each="transaction : ${transactionsEnterprise}">
+          <td th:text="${transaction.id}"></td>
+          <td th:text="${transaction.amount}"></td>
+          <td th:text="${transaction.typeAmount}"></td>
+          <td th:text="${transaction.concept}"></td>
+          <td th:text="${transaction.employee.name}"></td>
+          <td th:text="${transaction.enterprise.name}"></td>
 
         </tr>
         </tbody>
       </table>
-
-
+<!--
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id transacción</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:field=${amountTransaction}">
+        <td th:text="${amountTransaction}"></td>
+      </tr>
+      </tbody>
+    </table>
+-->
 
 
 

@@ -24,9 +24,9 @@
         <nav>
           <font></font> <img src="Images\UPD.jpg" height="140" /><font></font>
           <a href="inicio">Inicio</a>
-          <a href="employee">Usuarios</a>
-          <a href="enterprise">Empresas</a>
-          <a href="transaction">Ingresos y Egresos</a>
+          <a href="employee/add">Usuarios</a>
+          <a href="enterprise/add">Empresas</a>
+          <a href="transaction/add">Ingresos y Egresos</a>
           <div id="Colaboradores">
             <p>Colaboradores</p>
             <font></font> <img src="Images\MinTic.jpg" height="76" /><font></font><br>
@@ -37,28 +37,7 @@
       </div>
     </div>
 
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">Nombre Usuario</th>
-        <th scope="col">Password</th>
-        <th scope="col">Nombre Persona</th>
-        <th scope="col">Perfil</th>
-        <th scope="col">Acciones</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="usuario : ${usuarios}">
-        <td th:text="${usuario.email}"></td>
-        <td th:text="${usuario.password}"></td>
-        <td th:text="${usuario.name}"></td>
-        <td th:text="${usuario.role}"></td>
 
-
-
-      </tr>
-      </tbody>
-    </table>
 
 
 

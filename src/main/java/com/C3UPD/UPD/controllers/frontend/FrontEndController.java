@@ -12,7 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class FrontEndController {
@@ -72,7 +75,8 @@ public class FrontEndController {
     }
 
     @GetMapping("/TransactionSystem")
-    public String getTransactionSystem(){
+    public String getTransactionSystem(Model model){
+        model.addAttribute("enterprises",enterpriseService.getAllEnterprise());
         return "TransactionSystem";
     }
 
@@ -85,5 +89,17 @@ public class FrontEndController {
     public String postAddTransaction(@ModelAttribute("newTransaction") Transaction transaction) {
         transactionService.create(transaction);
         return "redirect:/TransactionSystem";
+    }
+
+    @GetMapping("/TransactionEnterprise/{id}")
+    public String getTransactionEnterprise(Model model, @PathVariable Long id){
+        model.addAttribute("transactionsEnterprise",transactionService.findTransactionByEnterpriseId(id));
+        List<Transaction> transactions = transactionService.findTransactionByEnterpriseId(id);
+        float amountTransaction = 0;
+        for (Transaction transaction: transactions){
+            amountTransaction += transaction.getAmount();
+        }
+        model.addAttribute("amountTransaction",amountTransaction);
+        return "TransactionEnterprise";
     }
 }
