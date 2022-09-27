@@ -1,6 +1,7 @@
 body {
   background-image: url(Images/fondo.jpg);
   background-repeat: no-repeat;
+  background-size:110%;
 }
 h1 {
   text-align: center;
