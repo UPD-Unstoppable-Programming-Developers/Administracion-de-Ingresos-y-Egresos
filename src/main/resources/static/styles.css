@@ -1,7 +1,7 @@
 body {
   background-image: url(Images/fondo.jpg);
   background-repeat: no-repeat;
-  background-size:110%;
+  background-size: 110%;
 }
 h1 {
   text-align: center;
@@ -135,7 +135,7 @@ h3 {
 }
 div #Rec {
   margin-left: 19%;
-  padding:0%;
+  padding: 0%;
 }
 /*barra lateral*/
 #btn-menu {
