@@ -1,6 +1,7 @@
 body {
   background-image: url(Images/fondo.jpg);
   background-repeat: no-repeat;
+  background-size: 110%;
 }
 h1 {
   text-align: center;
@@ -100,15 +101,49 @@ h3 {
   border-style: solid;
   color: #c7c7c7;
   font-size: 24px;
-  
 }
 #Nuevo:hover {
   background: #000000;
   border-color: #ffffff;
 }
+#GeneralLogin {
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-left: 26%;
+  margin-right: 26%;
+  background-color: #1f1c1cd7;
+  border-color: rgba(43, 46, 66, 0.575);
+  border-style: solid;
+  color: #c7c7c7;
+  font-size: 24px;
+}
+#ImagenLogin {
+  border-style: solid;
+  padding-left: 0%;
+  margin-left: 0%;
+  height: 50%;
+  width: 100%;
+}
+#GeneralLogin h1 {
+  padding: 0%;
+  margin-top: 10%;
+}
+#GeneralLogin input {
+  color: black;
+  font-size: 24px;
+}
+div #Rec {
+  margin-left: 19%;
+  padding: 0%;
+}
 /*barra lateral*/
 #btn-menu {
   display: none;
+}
+#IniciarSesion {
+  height: 50px;
+  width: 200px;
 }
 #CajaMenu {
   font-size: 30px;
@@ -149,7 +184,8 @@ h3 {
   transform: translateY(15%);
   color: #c7c7c7;
 }
-.cont-menu nav a, p {
+.cont-menu nav a,
+p {
   display: block;
   text-decoration: none;
   padding: 20px;
