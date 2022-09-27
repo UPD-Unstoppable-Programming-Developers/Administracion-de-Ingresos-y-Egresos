@@ -1,6 +1,7 @@
 package com.C3UPD.UPD.Models;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 
 @Entity
 @Table(name = "Transaction")
@@ -14,9 +15,9 @@ public class Transaction {
     @Column(name = "Concept")
     private String concept;
 
+    //@Transient
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    //@Transient
     private Employee employee;
     @ManyToOne
     @JoinColumn(name = "enterprise_id")
@@ -36,6 +37,7 @@ public class Transaction {
     }
 
     // Method
+    /*
     public int typeAmount(int amount, boolean typeAmount) {
         if (typeAmount == true) {
             return amount;
@@ -43,7 +45,7 @@ public class Transaction {
             return -amount;
         }
     }
-
+*/
     // Getters and setters
 
 
