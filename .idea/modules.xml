@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Administracion-de-Ingresos-y-Egresos.iml" filepath="$PROJECT_DIR$/Administracion-de-Ingresos-y-Egresos.iml" />
       <module fileurl="file://$PROJECT_DIR$/UPD.iml" filepath="$PROJECT_DIR$/UPD.iml" />
     </modules>
   </component>
