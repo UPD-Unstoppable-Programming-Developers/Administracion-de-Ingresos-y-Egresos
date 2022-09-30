@@ -109,6 +109,6 @@ public class FrontEndController {
             amountTransaction += transaction.getAmount();
         }
         model.addAttribute("amountTransaction",amountTransaction);
-        return "TransactionEnterprise/{id}";
+        return "TransactionEnterprise";
     }
 }
