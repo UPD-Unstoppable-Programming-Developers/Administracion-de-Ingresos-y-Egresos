@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
   <head>
     <meta charset="UTF-8" />
     <title>Ingresos y Egresos</title>
@@ -37,15 +37,21 @@
       <div class="cont-menu">
         <nav>
           <font></font> <img src="Images\UPD.jpg" height="140" /><font></font>
-          <a href="inicio">Inicio</a>
-          <a href="employee/add">Usuarios</a>
-          <a href="enterprise/add">Empresas</a>
-          <a href="transaction/add">Ingresos y Egresos</a>
-          <div id="Colaboradores">
+            <div sec:authorize="hasAnyRole('ADMIN','USER')" > <a href="inicio">Inicio</a> </div>
+            <div sec:authorize="hasRole('ADMIN')" ><a href="employee/add">Usuarios</a> </div>
+            <div sec:authorize="hasRole('ADMIN')" ><a href="enterprise/add">Empresas</a> </div>
+            <div sec:authorize="hasAnyRole('ADMIN','USER')" ><a href="transaction/add">Ingresos y Egresos</a></div>
+
+            <div id="Colaboradores">
             <p>Colaboradores</p>
             <font></font> <img src="Images\MinTic.jpg" height="76" /><font></font><br>
             <font></font> <img src="Images\UdeA.jpg" height="70" /><font></font><br>
           </div>
+            <form th:action="@{/logout}" method="post">
+
+                <button type="submit"> Cerrar Sesión    </button>
+
+            </form>
         </nav>
         <label for="btn-menu">✖️</label>
       </div>

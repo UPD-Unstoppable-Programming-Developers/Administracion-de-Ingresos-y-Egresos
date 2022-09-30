@@ -22,11 +22,11 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
 
-        System.out.println(email);
+        //System.out.println(email);
         Employee employee = null;
 
 
-        try {System.out.println(email);
+        try {//System.out.println(email);
             employee = employeeService.findbyEmail(email);
             //System.out.println(employee);
         } catch (Exception e){
