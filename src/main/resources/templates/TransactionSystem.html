@@ -40,11 +40,13 @@
           <td th:text="${enterprise.phone}"></td>
           <td th:text="${enterprise.NIT}"></td>
           <td>
+
             <div>
               <form th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}" th:method="get">
                 <button type="submit">Ver transacciones</button>
               </form>
             </div>
+
           </td>
 
         </tr>

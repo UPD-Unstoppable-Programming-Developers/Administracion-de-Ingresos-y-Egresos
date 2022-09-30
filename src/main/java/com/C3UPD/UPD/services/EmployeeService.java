@@ -39,7 +39,7 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    @Transactional(propagation= Propagation.REQUIRED, readOnly=true, noRollbackFor=Exception.class)
+    //@Transactional(readOnly=true)
     public Employee findbyEmail(String email){
         return employeeRepository.findByEmail(email);
     }

@@ -15,9 +15,10 @@ public class Transaction {
     @Column(name = "Concept")
     private String concept;
 
-    //@Transient
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    //@Transient
     private Employee employee;
     @ManyToOne
     @JoinColumn(name = "enterprise_id")

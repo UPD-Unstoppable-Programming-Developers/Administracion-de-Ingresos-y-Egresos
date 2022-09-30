@@ -9,6 +9,7 @@ import com.C3UPD.UPD.services.EnterpriseService;
 import com.C3UPD.UPD.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,6 +49,7 @@ public class FrontEndController {
     }
 
     @PostMapping("/login")
+    @Transactional
     public String postLogin(@ModelAttribute("formUsers") Employee employee){
         System.out.println(employee);
         return "redirect:/inicio";
