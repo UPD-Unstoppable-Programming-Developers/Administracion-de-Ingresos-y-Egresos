@@ -19,7 +19,7 @@
     <div id="Buttons">
       <form
         method="POST"
-        th:action="@{/employee/post}"
+        th:action="@{/Employee}"
         th:object="${newEmployee}"
       >
         <h3>Nuevo Usuario</h3>
@@ -41,7 +41,7 @@
           type="text"
           id="Empresa_id"
           name="Empresa_id"
-          th:field="*{enterprise}"
+          th:field="*{Enterprise}"
         /><br />
         <input type="submit" value="Ingresar" />
       </form>
@@ -56,13 +56,13 @@
             <a href="inicio">Inicio</a>
           </div>
           <div sec:authorize="hasRole('ADMIN')">
-            <a href="employee/add">Usuarios</a>
+            <a href="Employee">Usuarios</a>
           </div>
           <div sec:authorize="hasRole('ADMIN')">
-            <a href="enterprise/add">Empresas</a>
+            <a href="Enterprise">Empresas</a>
           </div>
           <div sec:authorize="hasAnyRole('ADMIN','USER')">
-            <a href="transaction/add">Ingresos y Egresos</a>
+            <a href="Transaction">Ingresos y Egresos</a>
           </div>
 
           <div id="Colaboradores">

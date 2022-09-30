@@ -61,23 +61,23 @@ public class FrontEndController {
         return "inicio";
     }
 
-    @GetMapping("/employee/add")
+    @GetMapping("/Employee")
     public String getAddEmployee(Model model){
         model.addAttribute("newEmployee",new Employee());
         return "Employee";
     }
-    @PostMapping("/employee/post")
+    @PostMapping("/Employee")
     public String postAddEmployee(@ModelAttribute("newEmployee") Employee employee){
         employeeService.create(employee);
         return "redirect:/inicio";
     }
 
-    @GetMapping("/enterprise/add")
+    @GetMapping("/Enterprise")
     public String getAddEnterprise(Model model){
         model.addAttribute("newEnterprise",new Enterprise());
         return "Enterprise";
     }
-    @PostMapping("/enterprise/post")
+    @PostMapping("/Enterprise")
     public String postAddEnterprise(@ModelAttribute("newEnterprise") Enterprise enterprise) {
         enterpriseService.create(enterprise);
         return "redirect:/inicio";
@@ -89,12 +89,12 @@ public class FrontEndController {
         return "TransactionSystem";
     }
 
-    @GetMapping("/transaction/add")
+    @GetMapping("/Transaction")
     public String getAddTransaction(Model model){
         model.addAttribute("newTransaction",new Transaction());
         return "Transaction";
     }
-    @PostMapping("/transaction/post")
+    @PostMapping("/Transaction")
     public String postAddTransaction(@ModelAttribute("newTransaction") Transaction transaction) {
         transactionService.create(transaction);
         return "redirect:/TransactionSystem";

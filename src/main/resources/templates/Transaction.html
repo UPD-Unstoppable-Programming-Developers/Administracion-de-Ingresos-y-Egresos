@@ -13,7 +13,7 @@
     </header>
     <h2>INGRESOS Y EGRESOS</h2>
     <div id="Buttons">
-        <form method="POST"  th:action="@{/transaction}" th:object="${newTransaction}">
+        <form method="POST"  th:action="@{/Transaction}" th:object="${newTransaction}">
             <h3>Nuevo Movimiento de Dinero</h3>
             <label for="id">id</label><br>
             <input type="text" id="id" name="id" th:field="*{id}" /><br>
@@ -38,9 +38,9 @@
         <nav>
           <font></font> <img src="Images\UPD.jpg" height="140" /><font></font>
             <div sec:authorize="hasAnyRole('ADMIN','USER')" > <a href="inicio">Inicio</a> </div>
-            <div sec:authorize="hasRole('ADMIN')" ><a href="employee/add">Usuarios</a> </div>
-            <div sec:authorize="hasRole('ADMIN')" ><a href="enterprise/add">Empresas</a> </div>
-            <div sec:authorize="hasAnyRole('ADMIN','USER')" ><a href="transaction">Ingresos y Egresos</a></div>
+            <div sec:authorize="hasRole('ADMIN')" ><a href="Employee">Usuarios</a> </div>
+            <div sec:authorize="hasRole('ADMIN')" ><a href="Enterprise">Empresas</a> </div>
+            <div sec:authorize="hasAnyRole('ADMIN','USER')" ><a href="Transaction">Ingresos y Egresos</a></div>
 
             <div id="Colaboradores">
             <p>Colaboradores</p>
