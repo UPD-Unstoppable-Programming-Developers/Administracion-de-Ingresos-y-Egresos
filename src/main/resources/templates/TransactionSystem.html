@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
   <head>
     <meta charset="UTF-8" />
     <title>Ingresos y Gastos</title>
@@ -9,22 +13,17 @@
     <header class="header">
       <div class="container"></div>
       <div class="btn-menu"></div>
-          <label for="btn-menu" id="CajaMenu">☰</label>
-
+      <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
     <h1>ADMINISTRACIÓN DE INGRESOS Y EGRESOS</h1>
     <a href="transaction/add" id="Nuevo">Nuevo</a>
 
-
-
-
     <div id="Table">
-        <h2>Listado de empresas</h2>
+      <h2>Listado de empresas</h2>
     </div>
 
-
-    <table class="table">
-        <thead>
+    <table class="table" id="List">
+      <thead>
         <tr>
           <th scope="col">Id Empresa</th>
           <th scope="col">Nombre Empresa</th>
@@ -32,8 +31,8 @@
           <th scope="col">Telefono</th>
           <th scope="col">NIT</th>
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         <tr th:each="enterprise : ${enterprises}">
           <td th:text="${enterprise.id}"></td>
           <td th:text="${enterprise.name}"></td>
@@ -41,24 +40,18 @@
           <td th:text="${enterprise.phone}"></td>
           <td th:text="${enterprise.NIT}"></td>
           <td>
-
             <div>
-              <form th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}" th:method="get">
-                <button type="submit">Ver transacciones</button>
+              <form
+                th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}"
+                th:method="get"
+              >
+                <button type="submit" id="Ver">Ver transacciones</button>
               </form>
             </div>
-
           </td>
-
         </tr>
-        </tbody>
-      </table>
-
-
-
-
-
-
+      </tbody>
+    </table>
 
     <div class="capa"></div>
     <input type="checkbox" id="btn-menu" />
@@ -66,25 +59,32 @@
       <div class="cont-menu">
         <nav>
           <font></font> <img src="Images\UPD.jpg" height="140" /><font></font>
-          <div sec:authorize="hasAnyRole('ADMIN','USER')" > <a href="inicio">Inicio</a> </div>
-          <div sec:authorize="hasRole('ADMIN')" ><a href="employee/add">Usuarios</a> </div>
-          <div sec:authorize="hasRole('ADMIN')" ><a href="enterprise/add">Empresas</a> </div>
-          <div sec:authorize="hasAnyRole('ADMIN','USER')" ><a href="transaction/add">Ingresos y Egresos</a></div>
+          <div sec:authorize="hasAnyRole('ADMIN','USER')">
+            <a href="inicio">Inicio</a>
+          </div>
+          <div sec:authorize="hasRole('ADMIN')">
+            <a href="employee/add">Usuarios</a>
+          </div>
+          <div sec:authorize="hasRole('ADMIN')">
+            <a href="enterprise/add">Empresas</a>
+          </div>
+          <div sec:authorize="hasAnyRole('ADMIN','USER')">
+            <a href="transaction/add">Ingresos y Egresos</a>
+          </div>
 
           <div id="Colaboradores">
             <p>Colaboradores</p>
-            <font></font> <img src="Images\MinTic.jpg" height="76" /><font></font><br>
-            <font></font> <img src="Images\UdeA.jpg" height="70" /><font></font><br>
+            <font></font>
+            <img src="Images\MinTic.jpg" height="76" /><font></font><br />
+            <font></font> <img src="Images\UdeA.jpg" height="70" /><font></font
+            ><br />
           </div>
           <form th:action="@{/logout}" method="post">
-
-            <button type="submit"> Cerrar Sesión    </button>
-
+            <button type="submit" id="CerrarSesion">Cerrar Sesión</button>
           </form>
         </nav>
         <label for="btn-menu">✖️</label>
       </div>
     </div>
-
   </body>
 </html>

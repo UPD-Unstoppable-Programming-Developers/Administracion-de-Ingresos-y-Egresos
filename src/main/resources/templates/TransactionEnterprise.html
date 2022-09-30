@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
   <head>
     <meta charset="UTF-8" />
     <title>Transacción por Empresa</title>
@@ -8,22 +12,18 @@
   <body>
     <header class="header">
       <div class="container"></div>
-        <div class="btn-menu"></div>
-          <label for="btn-menu" id="CajaMenu">☰</label>
+      <div class="btn-menu"></div>
+      <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
     <h1>TRANSACCION POR EMPRESA</h1>
     <a href="transaction/add" id="Nuevo">Nuevo</a>
 
     <div id="Table">
-        <h2>INGRESOS Y EGRESOS</h2>
+      <h2>INGRESOS Y EGRESOS</h2>
     </div>
 
-
-
-
-
-      <table class="table">
-        <thead>
+    <table class="table" id="Table">
+      <thead>
         <tr>
           <th scope="col">Id transacción</th>
           <th scope="col">Cantidad</th>
@@ -32,8 +32,8 @@
           <th scope="col">Empleado</th>
           <th scope="col">Empresa</th>
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         <tr th:each="transaction : ${transactionsEnterprise}">
           <td th:text="${transaction.id}"></td>
           <td th:text="${transaction.amount}"></td>
@@ -41,28 +41,23 @@
           <td th:text="${transaction.concept}"></td>
           <td th:text="${transaction.employee.name}"></td>
           <td th:text="${transaction.enterprise.name}"></td>
-
         </tr>
-        </tbody>
-      </table>
-<!-- -->
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">Total de transacciones</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td th:text="${amountTransaction}"></td>
-      </tr>
       </tbody>
     </table>
     <!-- -->
-
-
-
-
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Total de transacciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td th:text="${amountTransaction}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- -->
 
     <div class="capa"></div>
     <input type="checkbox" id="btn-menu" />
@@ -70,25 +65,32 @@
       <div class="cont-menu">
         <nav>
           <font></font> <img src="Images\UPD.jpg" height="140" /><font></font>
-          <div sec:authorize="hasAnyRole('ADMIN','USER')" > <a href="inicio">Inicio</a> </div>
-          <div sec:authorize="hasRole('ADMIN')" ><a href="employee/add">Usuarios</a> </div>
-          <div sec:authorize="hasRole('ADMIN')" ><a href="enterprise/add">Empresas</a> </div>
-          <div sec:authorize="hasAnyRole('ADMIN','USER')" ><a href="transaction/add">Ingresos y Egresos</a></div>
+          <div sec:authorize="hasAnyRole('ADMIN','USER')">
+            <a href="inicio">Inicio</a>
+          </div>
+          <div sec:authorize="hasRole('ADMIN')">
+            <a href="employee/add">Usuarios</a>
+          </div>
+          <div sec:authorize="hasRole('ADMIN')">
+            <a href="enterprise/add">Empresas</a>
+          </div>
+          <div sec:authorize="hasAnyRole('ADMIN','USER')">
+            <a href="Transaction">Ingresos y Egresos</a>
+          </div>
 
           <div id="Colaboradores">
             <p>Colaboradores</p>
-            <font></font> <img src="Images\MinTic.jpg" height="76" /><font></font><br>
-            <font></font> <img src="Images\UdeA.jpg" height="70" /><font></font><br>
+            <font></font>
+            <img src="Images\MinTic.jpg" height="76" /><font></font><br />
+            <font></font> <img src="Images\UdeA.jpg" height="70" /><font></font
+            ><br />
           </div>
           <form th:action="@{/logout}" method="post">
-
-            <button type="submit"> Cerrar Sesión    </button>
-
+            <button type="submit" id="CerrarSesion">Cerrar Sesión</button>
           </form>
         </nav>
         <label for="btn-menu">✖️</label>
       </div>
     </div>
-
   </body>
 </html>
