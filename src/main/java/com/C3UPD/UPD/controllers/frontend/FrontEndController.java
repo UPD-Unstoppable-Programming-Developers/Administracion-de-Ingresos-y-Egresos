@@ -92,7 +92,7 @@ public class FrontEndController {
     @GetMapping("/transaction/add")
     public String getAddTransaction(Model model){
         model.addAttribute("newTransaction",new Transaction());
-        return "transaction";
+        return "Transaction";
     }
     @PostMapping("/transaction/post")
     public String postAddTransaction(@ModelAttribute("newTransaction") Transaction transaction) {
