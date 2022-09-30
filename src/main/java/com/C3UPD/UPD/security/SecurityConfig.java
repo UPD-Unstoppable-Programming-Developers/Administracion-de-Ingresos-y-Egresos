@@ -37,13 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/login*").permitAll()
                 .antMatchers("/inicio").hasAnyRole("ADMIN","USER")
-                .antMatchers("/employee").hasRole("ADMIN")
-                .antMatchers("/employee/add").hasRole("ADMIN")
-                .antMatchers("/enterprise").hasRole("ADMIN")
-                .antMatchers("/enterprise/add").hasRole("ADMIN")
-                .antMatchers("/transaction").hasAnyRole("ADMIN","USER")
-                .antMatchers("/transaction/add").hasAnyRole("ADMIN","USER")
-                .antMatchers("/TransactionEnterprise").hasAnyRole("ADMIN","USER")
+                .antMatchers("/Employee").hasRole("ADMIN")
+                .antMatchers("/Enterprise").hasRole("ADMIN")
+                .antMatchers("/Transaction").hasAnyRole("ADMIN","USER")
+                .antMatchers("/TransactionEnterprise*").hasAnyRole("ADMIN","USER")
                 .antMatchers("/TransactionSystem").hasAnyRole("ADMIN","USER")
 
 
