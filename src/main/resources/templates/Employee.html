@@ -17,11 +17,7 @@
     </header>
     <h2>USUARIOS</h2>
     <div id="Buttons">
-      <form
-        method="POST"
-        th:action="@{/Employee}"
-        th:object="${newEmployee}"
-      >
+      <form method="POST" th:action="@{/Employee}" th:object="${newEmployee}">
         <h3>Nuevo Usuario</h3>
         <label for="id">id</label><br />
         <input type="text" id="id" name="id" th:field="*{id}" /><br />

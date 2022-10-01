@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html
-  lang="es"
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
->
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
   <head>
     <meta charset="UTF-8" />
     <title>Ingresos y Gastos</title>
@@ -42,9 +39,7 @@
           <td>
             <div>
               <form
-                th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}"
-                th:method="get"
-              >
+                th:action="@{/TransactionEnterprise/{id}(id=${enterprise.id})}" th:method="get">
                 <button type="submit" id="Ver">Ver transacciones</button>
               </form>
             </div>

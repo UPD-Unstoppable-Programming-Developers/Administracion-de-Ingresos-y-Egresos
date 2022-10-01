@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html
-  lang="es"
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
->
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
   <head>
     <meta charset="UTF-8" />
     <title>Transacción por Empresa</title>
@@ -16,13 +13,13 @@
       <label for="btn-menu" id="CajaMenu">☰</label>
     </header>
     <h1>TRANSACCION POR EMPRESA</h1>
-    <a href="Transaction" id="Nuevo">Nuevo</a>
+    <a href="/Transaction" id="Nuevo">Nuevo</a>
 
     <div id="Table">
       <h2>INGRESOS Y EGRESOS</h2>
     </div>
 
-    <table class="table" id="Table">
+    <table class="table" id="List">
       <thead>
         <tr>
           <th scope="col">Id transacción</th>
