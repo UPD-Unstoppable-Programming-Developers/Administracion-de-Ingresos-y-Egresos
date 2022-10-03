@@ -48,10 +48,11 @@ h3 {
 #Buttons form {
   background-color: #1f1c1cd7;
   font-size: 20px;
-  height: 420px;
-  width: 500px;
+  height: 200%;
+  width: 40%;
   margin-top: 3%;
   padding-left: 7%;
+  margin-bottom: 5%;
   border-style: solid;
   border-color: rgba(43, 46, 66, 0.575);
   color: #ffffff;
